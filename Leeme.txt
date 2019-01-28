@@ -1,0 +1,5 @@
+
+/*NOTAS*/
+Configurar en VSC la asociacion ("files.associations": {"*.ejs": "html"})
+para que intellisense reconozca el código HTML en archivos .ejs
+fuente: https://stackoverflow.com/questions/30264197/is-there-a-way-to-make-visual-studio-code-recognize-html-syntax-in-ejs-files/33808037
