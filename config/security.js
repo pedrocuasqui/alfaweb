@@ -29,8 +29,9 @@ module.exports.security = {
 
 	cors: {
 		allRoutes: true,
-		allowOrigins: ["https://www.tiny.cloud "]
-		// allowCredentials: false,
+		// allowOrigins: ["https://www.tiny.cloud "]
+		allowOrigins: "*",
+		allowCredentials: true
 	},
 
 	/****************************************************************************
