@@ -141,6 +141,8 @@ module.exports = {
 		 *                                                                          *
 		 ***************************************************************************/
 		cors: {
+			allowRequestMethods: "GET, POST, PUT, DELETE, OPTIONS, HEAD",
+			allowRequestHeaders: "content-type,x-csrf-token",
 			allRoutes: true,
 			// allowOrigins: ["https://www.tiny.cloud "]
 			allowOrigins: "*",
