@@ -155,7 +155,7 @@ parasails.registerPage("registro-usuario", {
 						swal({
 							title: `No se puede registrar en este momento, intente más tarde!`,
 							icon: "error",
-							type: "error",
+							type: `error ${err}`,
 							confirmButtonClass: "btn-danger"
 						});
 					}
