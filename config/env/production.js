@@ -147,7 +147,8 @@ module.exports = {
 			allowCredentials: true,
 			allowAnyOriginWithCredentialsUnsafe: true
 			//Fuente: https://sailsjs.com/documentation/reference/configuration/sails-config-security#?sailsconfigsecuritycors
-		}
+		},
+		csrf: true
 	},
 
 	/***************************************************************************
