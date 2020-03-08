@@ -31,7 +31,9 @@ module.exports.security = {
 		allRoutes: true,
 		// allowOrigins: ["https://www.tiny.cloud "]
 		allowOrigins: "*",
-		allowCredentials: true
+		allowCredentials: true,
+		allowAnyOriginWithCredentialsUnsafe: true
+		//Fuente: https://sailsjs.com/documentation/reference/configuration/sails-config-security#?sailsconfigsecuritycors
 	},
 
 	/****************************************************************************
