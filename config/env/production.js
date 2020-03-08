@@ -248,7 +248,7 @@ module.exports = {
 		 ***************************************************************************/
 		onlyAllowOrigins: [
 			"https://git.heroku.com",
-			"https://vast-wildwood-67076.herokuapp.com"
+			"https://obscure-harbor-71757.herokuapp.com"
 		]
 		/***************************************************************************
 		 *                                                                          *
@@ -352,7 +352,7 @@ module.exports = {
 	 *                                                                         *
 	 ***************************************************************************/
 	custom: {
-		baseUrl: "https://vast-wildwood-67076.herokuapp.com/",
+		baseUrl: "https://obscure-harbor-71757.herokuapp.com",
 		imageBaseUrl: "https://obscure-harbor-71757.herokuapp.com/images/uploaded",
 
 		rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000, // 30 days

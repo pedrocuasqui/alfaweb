@@ -129,6 +129,4 @@ lib-cov
 *.log
 *.out
 *.pid
-pendientes.txt
-ScriptsMongoDB_LogAprendizaje.txt
 
