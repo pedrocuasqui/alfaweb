@@ -181,7 +181,7 @@ module.exports = {
 		},
 		//en produccion, intentar descomentar este bloque de codigo para conectar las sesiones con mongo
 
-		adapter: "connect-mongo", //connect es un plugin para almacenar sesiones en mongoDB, es original de express
+		/* 	adapter: "connect-mongo", //connect es un plugin para almacenar sesiones en mongoDB, es original de express
 		// url: "mongodb://localhost:27017/alfabetizaweb",
 		// url: process.env.DATABASE_URL,
 		url:
@@ -190,8 +190,13 @@ module.exports = {
 		replicaSet: "alfabetizaweb-shard-0",
 		authSource: "admin",
 		collection: "sessions",
-		// auto_reconnect: false,
-		stringify: false
+		auto_reconnect: false,
+		stringify: false */
+		// ***************************************************************************/
+		adapter: "@sailshq/connect-redis",
+		// url: "redis://user:password@localhost:6379/databasenumber"
+		url:
+			"redis://redistogo:76a374c290da6066bfe438183bcb5a5e@pike.redistogo.com:10261/"
 		//--------------------------------------------------------------------------
 		// /\   OR, to avoid checking it in to version control, you might opt to
 		// ||   set sensitive credentials like this using an environment variable.
@@ -262,7 +267,7 @@ module.exports = {
 		 * (https://sailsjs.com/docs/concepts/deployment/scaling)                   *
 		 *                                                                          *
 		 ***************************************************************************/
-		// adapter: '@sailshq/socket.io-redis',
+		// adapter: "@sailshq/socket.io-redis"
 		// url: 'redis://user:password@bigsquid.redistogo.com:9562/databasenumber',
 		//--------------------------------------------------------------------------
 		// /\   OR, to avoid checking it in to version control, you might opt to
