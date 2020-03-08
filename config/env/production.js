@@ -174,7 +174,7 @@ module.exports = {
 		 ***************************************************************************/
 
 		secret: "c43a3692ca74e5da2d379cf083666115",
-		rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000, // 30 days,
+		// rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000, // 30 days,
 		cookie: {
 			maxAge: 30 * 24 * 60 * 60 * 1000
 			// secure: true
@@ -246,7 +246,10 @@ module.exports = {
 		 * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
 		 *                                                                          *
 		 ***************************************************************************/
-		onlyAllowOrigins: ["https://git.heroku.com"]
+		onlyAllowOrigins: [
+			"https://git.heroku.com",
+			"https://vast-wildwood-67076.herokuapp.com"
+		]
 		/***************************************************************************
 		 *                                                                          *
 		 * If you are deploying a cluster of multiple servers and/or processes,     *
@@ -349,7 +352,7 @@ module.exports = {
 	 *                                                                         *
 	 ***************************************************************************/
 	custom: {
-		baseUrl: "https://obscure-harbor-71757.herokuapp.com/",
+		baseUrl: "https://vast-wildwood-67076.herokuapp.com/",
 		imageBaseUrl: "https://obscure-harbor-71757.herokuapp.com/images/uploaded",
 
 		rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000, // 30 days

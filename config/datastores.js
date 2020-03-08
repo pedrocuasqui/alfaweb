@@ -45,20 +45,18 @@ module.exports.datastores = {
 		 *    (See https://sailsjs.com/config/datastores for help.)                 *
 		 *                                                                          *
 		 ***************************************************************************/
-
 		/*Mongo db por defecto no tiene habilitada la autenticacion ni autorizacion*/
 		//Descomentar estas líneas de código para probar la base local
 		// adapter: "sails-mongo",
 		// url: "mongodb://localhost:27017/alfabetizaweb",
 		// ssl: false
-
 		//Descomentar estas lineas de código para conectarse a Mongo en línea
-		adapter: "sails-mongo",
+		/* 		adapter: "sails-mongo",
 		// url: process.env.DATABASE_URL,
 		url:
 			"mongodb://admin:admin@alfabetizaweb-shard-00-00-cyg3m.mongodb.net:27017,alfabetizaweb-shard-00-01-cyg3m.mongodb.net:27017,alfabetizaweb-shard-00-02-cyg3m.mongodb.net:27017/alfabetizaweb",
 		ssl: true,
 		replicaSet: "alfabetizaweb-shard-0",
-		authSource: "admin"
+		authSource: "admin" */
 	}
 };
