@@ -93,7 +93,12 @@ parasails.registerPage("registro-usuario", {
 			axios({
 				url: "/registro-usuario",
 				method: "post",
-				data: formData
+				data: formData,
+				baseURL: "https://some-domain.com/registro-usuario/",
+				headers: {
+					"X-Requested-With": "XMLHttpRequest",
+					"Content-Type": "multipart/form-data"
+				}
 			})
 				.then(response => {
 					// var pTag = document.createElement("p");
