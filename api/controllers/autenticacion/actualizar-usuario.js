@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*jshint esversion:8 */
 module.exports = {
 	friendlyName: "Actualizar usuario",

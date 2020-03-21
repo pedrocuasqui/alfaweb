@@ -205,23 +205,23 @@ parasails.registerPage("m-4-portapapeles", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "pegar") {
-				$(function() {
+				$(() => {
 					$("#modalpegar").modal("show");
 				});
 			} else if (idObjeto == "cortar") {
-				$(function() {
+				$(() => {
 					$("#modalcortar").modal("show");
 				});
 			} else if (idObjeto == "copiar") {
-				$(function() {
+				$(() => {
 					$("#modalcopiar").modal("show");
 				});
 			} else if (idObjeto == "formato") {
-				$(function() {
+				$(() => {
 					$("#modalformato").modal("show");
 				});
 			} else if (idObjeto == "portapapeles") {
-				$(function() {
+				$(() => {
 					$("#modalportapapeles").modal("show");
 				});
 			}
@@ -239,7 +239,7 @@ parasails.registerPage("m-4-portapapeles", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

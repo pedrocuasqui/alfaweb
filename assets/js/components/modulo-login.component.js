@@ -104,7 +104,7 @@ parasails.registerComponent("modulo-login", {
   </div>
   `,
 	methods: {
-		validarFormulario(e) {
+		validarFormulario() {
 			// Clear out any pre-existing error messages.
 			this.formErrors = {};
 
@@ -208,7 +208,7 @@ parasails.registerComponent("modulo-login", {
 						url: "/enviar-correo-recuperacion",
 						data: formData
 					})
-						.then(response => {
+						.then(() => {
 							swal({
 								icon: "success",
 								title: "Correo enviado correctamente",

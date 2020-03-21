@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*jshint esversion:8 */
 module.exports = {
 	friendlyName: "Verificar clave recuperacion cuenta",
@@ -19,7 +20,6 @@ module.exports = {
 
 	fn: async function(inputs, exits) {
 		var res = this.res;
-		var usuarioEs = null;
 		var usuarioRecuperacion = null;
 
 		try {

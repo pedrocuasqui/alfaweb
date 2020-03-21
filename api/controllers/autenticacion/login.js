@@ -118,7 +118,6 @@ module.exports = {
 			//si no retorna nada, entonces probar con
 
 			var estudiantes = null;
-			var estudiantesids = null;
 			var estudiantesSessions = await Sessions.find({}); //pendiente ordenar por fecha de logueo
 			if (estudiantesSessions) {
 				estudiantes = estudiantesSessions

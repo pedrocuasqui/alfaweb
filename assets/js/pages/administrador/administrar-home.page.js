@@ -106,10 +106,7 @@ parasails.registerPage("administrar-home", {
 		abrirCurso(cursoId) {
 			window.location.href = "/administrar-indice/?cursoId=" + cursoId;
 		},
-		mostrarEditarCurso(cursoId) {
-			// event.cancelBubble = true;
-			// if(event.stopPropagation) event.stopPropagation();
-		},
+
 		validarCampos(curso) {
 			this.formErrors = {};
 
@@ -140,7 +137,7 @@ parasails.registerPage("administrar-home", {
 				url: "/actualizar-curso",
 				data: formData
 			})
-				.then(response => {
+				.then(() => {
 					swal({
 						icon: "success",
 						title: "Curso guardado correctamente",
@@ -198,7 +195,7 @@ parasails.registerPage("administrar-home", {
 				url: "/habilitar-admin",
 				data: formData
 			})
-				.then(response => {
+				.then(() => {
 					swal({
 						icon: "success",
 						title: titulo,

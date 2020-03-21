@@ -77,11 +77,11 @@ parasails.registerPage("m-8-dispositivos-moviles", {
 	methods: {
 		infoObjeto(idObjeto) {
 			if (idObjeto == "dispositivo") {
-				$(function() {
+				$(() => {
 					$("#modaldispositivo").modal("show");
 				});
 			} else if (idObjeto == "app") {
-				$(function() {
+				$(() => {
 					$("#modalapp").modal("show");
 				});
 			}
@@ -99,7 +99,7 @@ parasails.registerPage("m-8-dispositivos-moviles", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

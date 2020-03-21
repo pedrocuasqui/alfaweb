@@ -1,12 +1,10 @@
-parasails.registerComponent('modulo-modal-inicio', {
+parasails.registerComponent("modulo-modal-inicio", {
 	props: [
-		'tituloContenido',
-		'descripcionActividad',
-		'enlaceSiguienteActividad',
+		"tituloContenido",
+		"descripcionActividad",
+		"enlaceSiguienteActividad"
 	],
-	data() {
-		return {}
-	},
+	data() {},
 
 	template: /*template */ `<div class="modal fade" id="modalInicial" tabindex="-1" role="dialog" aria-labelledby="tituloModalInicial"
     aria-hidden="true" data-keyboard="false" data-backdrop="static">
@@ -27,5 +25,5 @@ parasails.registerComponent('modulo-modal-inicio', {
       </div>
     </div>
   </div>`,
-	methods: {},
-})
+	methods: {}
+});

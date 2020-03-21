@@ -49,7 +49,7 @@ module.exports = {
 		curso.enlace = "/indice-estudiante/?cursoId=" + curso.id;
 		//Conteo del número de submodulos por cada modulo del curso
 		curso.modulos.forEach(modulo => {
-			modulo.submodulos.forEach(submodulo => {
+			modulo.submodulos.forEach(() => {
 				numeroSubmodulosCurso += 1;
 			});
 		});

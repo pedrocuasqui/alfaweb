@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 parasails.registerPage("m-3-area-trabajo", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
 	//  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
@@ -121,7 +122,7 @@ parasails.registerPage("m-3-area-trabajo", {
 		//   //una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 		//   this.mostrarToolTip = true;
 		// },
-		// mouseOutPc(evet) {
+		// mouseOutPc() {
 		//   this.mostrarToolTip = false;
 
 		// },

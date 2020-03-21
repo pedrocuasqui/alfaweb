@@ -62,7 +62,7 @@ parasails.registerPage("crear-submodulo", {
 	//  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
 
 	methods: {
-		validarFormulario(e) {
+		validarFormulario() {
 			// solo se ejecutará cuando se pulse el botón Guardar Submodulo
 			this.formErrors = {};
 
@@ -115,7 +115,7 @@ parasails.registerPage("crear-submodulo", {
 						title: "Tema creado correctamente",
 						showConfirmButton: true,
 						timer: 2000
-					}).then(val => {
+					}).then(() => {
 						//retorna el submodulo creado
 						this.submoduloCreado = response.data;
 

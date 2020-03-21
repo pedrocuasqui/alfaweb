@@ -13,7 +13,6 @@ module.exports = {
 	fn: async function() {
 		// Respond with view.
 		var req = this.req;
-		var res = this.res;
 		var usuario = null;
 
 		//si se encuentra el usuario, se remite la información del usuario logueado para poder mostrar su nombre y validar su rol

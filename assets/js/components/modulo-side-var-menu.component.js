@@ -173,7 +173,7 @@ parasails.registerComponent("modulo-side-var-menu", {
 		onClickShowModalEvaluacion(moduloNombre, indice) {
 			this.moduloEvaluacion = moduloNombre;
 			this.indiceModulo = indice;
-			$(function() {
+			$(() => {
 				$("#modalEnlaceEvaluacion").modal("show");
 			});
 		},
@@ -198,7 +198,7 @@ parasails.registerComponent("modulo-side-var-menu", {
 			}
 			return estilo;
 		},
-		objetoPerteneceModulo(moduloId) {
+		objetoPerteneceModulo() {
 			let valor = false;
 			//primera parte, se evalua que el objeto seleccionado sea un modulo y que sea el modulo del arreglo
 			//la segunda parte se evalua si el objetoSeleccionado es un submodulo y su propiedad modulo corresponda con el modulo actual
@@ -244,7 +244,7 @@ parasails.registerComponent("modulo-side-var-menu", {
 				method: "PUT",
 				data: { publicar: false }
 			})
-				.then(response => {
+				.then(() => {
 					this.curso.publicado = false;
 					swal({
 						icon: "info",

@@ -130,15 +130,15 @@ parasails.registerPage("m-5-navegador-web", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "edge") {
-				$(function() {
+				$(() => {
 					$("#modaledge").modal("show");
 				});
 			} else if (idObjeto == "chrome") {
-				$(function() {
+				$(() => {
 					$("#modalchrome").modal("show");
 				});
 			} else if (idObjeto == "firefox") {
-				$(function() {
+				$(() => {
 					$("#modalfirefox").modal("show");
 				});
 			}
@@ -156,7 +156,7 @@ parasails.registerPage("m-5-navegador-web", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

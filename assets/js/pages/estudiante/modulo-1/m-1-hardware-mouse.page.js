@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 parasails.registerPage("m-1-hardware-mouse", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
 	//  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
@@ -175,19 +176,19 @@ parasails.registerPage("m-1-hardware-mouse", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "clic-izquierdo") {
-				$(function() {
+				$(() => {
 					$("#modalClicIzquierdo").modal("show");
 				});
 			} else if (idObjeto == "clic-derecho") {
-				$(function() {
+				$(() => {
 					$("#modalClicDerecho").modal("show");
 				});
 			} else if (idObjeto == "scroll") {
-				$(function() {
+				$(() => {
 					$("#modalScroll").modal("show");
 				});
 			} else if (idObjeto == "mouse") {
-				$(function() {
+				$(() => {
 					$("#modalmouse").modal("show");
 				});
 			}
@@ -205,7 +206,7 @@ parasails.registerPage("m-1-hardware-mouse", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

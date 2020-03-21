@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*jshint esversion:8 */
 parasails.registerPage("inicio", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
@@ -8,9 +9,9 @@ parasails.registerPage("inicio", {
 		usuario: {
 			nombre: "Visitante",
 			rol: "Estudiante",
-			id: "1",
+			id: "1"
 		},
-		breadcrumb: [{ nombre: "Cursos", id: 1, enlace: "/inicio" }], //se envia un nombre vacio para evaluar si es o no un breadcrumb valido y  segun eso mostrar o no el bredadcrumb
+		breadcrumb: [{ nombre: "Cursos", id: 1, enlace: "/inicio" }] //se envia un nombre vacio para evaluar si es o no un breadcrumb valido y  segun eso mostrar o no el bredadcrumb
 	},
 
 	//  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -42,7 +43,7 @@ parasails.registerPage("inicio", {
 
 			//else implicito
 			window.location.href = "/indice-estudiante/?cursoId=" + cursoId;
-		},
+		}
 	},
-	computed: {},
+	computed: {}
 });

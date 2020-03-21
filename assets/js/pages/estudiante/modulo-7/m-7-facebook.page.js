@@ -203,35 +203,35 @@ parasails.registerPage("m-7-facebook", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "facebook") {
-				$(function() {
+				$(() => {
 					$("#modalfacebook").modal("show");
 				});
 			} else if (idObjeto == "paso1") {
-				$(function() {
+				$(() => {
 					$("#modalpaso1").modal("show");
 				});
 			} else if (idObjeto == "paso2") {
-				$(function() {
+				$(() => {
 					$("#modalpaso2").modal("show");
 				});
 			} else if (idObjeto == "paso3") {
-				$(function() {
+				$(() => {
 					$("#modalpaso3").modal("show");
 				});
 			} else if (idObjeto == "paso4") {
-				$(function() {
+				$(() => {
 					$("#modalpaso4").modal("show");
 				});
 			} else if (idObjeto == "paso5") {
-				$(function() {
+				$(() => {
 					$("#modalpaso5").modal("show");
 				});
 			} else if (idObjeto == "paso6") {
-				$(function() {
+				$(() => {
 					$("#modalpaso6").modal("show");
 				});
 			} else if (idObjeto == "paso7") {
-				$(function() {
+				$(() => {
 					$("#modalpaso7").modal("show");
 				});
 			}
@@ -249,7 +249,7 @@ parasails.registerPage("m-7-facebook", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

@@ -27,7 +27,7 @@ parasails.registerPage("actualizar-usuario", {
 	//  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
 	//  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
 	methods: {
-		validarFormulario(e) {
+		validarFormulario() {
 			// Clear out any pre-existing error messages.
 			this.formErrors = {};
 
@@ -84,7 +84,7 @@ parasails.registerPage("actualizar-usuario", {
 				method: "post",
 				data: formData
 			})
-				.then(response => {
+				.then(() => {
 					swal({
 						icon: "success",
 						title: "Actualización exitosa",

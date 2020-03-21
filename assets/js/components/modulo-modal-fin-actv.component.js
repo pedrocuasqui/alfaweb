@@ -1,8 +1,6 @@
-parasails.registerComponent('modulo-modal-fin-actv', {
-	props: ['conteoAciertos', 'elementos', 'actividadFinaliza'],
-	data() {
-		return {}
-	},
+parasails.registerComponent("modulo-modal-fin-actv", {
+	props: ["conteoAciertos", "elementos", "actividadFinaliza"],
+	data() {},
 
 	template: /*template */ `
     <div v-show="actividadFinaliza" class="modal fade" id="actividadFinalizada" tabindex="-1" role="dialog"
@@ -26,5 +24,5 @@ parasails.registerComponent('modulo-modal-fin-actv', {
         </div>
       </div>
     </div>`,
-	methods: {},
-})
+	methods: {}
+});

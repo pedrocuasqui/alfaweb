@@ -27,7 +27,7 @@ parasails.registerPage("clave-recuperacion-cuenta", {
 	//  ║║║║ ║ ║╣ ╠╦╝╠═╣║   ║ ║║ ║║║║╚═╗
 	//  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
 	methods: {
-		validarFormulario(e) {
+		validarFormulario() {
 			// Clear out any pre-existing error messages.
 			this.formErrors = {};
 
@@ -59,7 +59,7 @@ parasails.registerPage("clave-recuperacion-cuenta", {
 				method: "post",
 				data: formData
 			})
-				.then(response => {
+				.then(() => {
 					this.mostrarCamposContrasenia = true;
 				})
 				.catch(err => {
@@ -96,7 +96,7 @@ parasails.registerPage("clave-recuperacion-cuenta", {
 					// return false;
 				});
 		},
-		validarContrasenia(e) {
+		validarContrasenia() {
 			// Clear out any pre-existing error messages.
 			this.formErrors = {};
 
@@ -138,7 +138,7 @@ parasails.registerPage("clave-recuperacion-cuenta", {
 				method: "post",
 				data: formData
 			})
-				.then(response => {
+				.then(() => {
 					swal({
 						icon: "success",
 						title: "CONTRASEÑA ACTUALIZADA",

@@ -429,7 +429,7 @@ parasails.registerComponent("modulo-panel-derecho", {
 			var ctx = document
 				.getElementById("graficoPuntuacionHistorica")
 				.getContext("2d");
-			var chart = new Chart(ctx, {
+			new Chart(ctx, {
 				// The type of chart we want to create
 				type: "line",
 

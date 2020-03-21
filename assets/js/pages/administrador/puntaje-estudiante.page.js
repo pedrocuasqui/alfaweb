@@ -14,7 +14,7 @@ parasails.registerPage("puntaje-estudiante", {
 		cursoSeleccionado: "0",
 		estudiantesConSusIntentos: [],
 		estudiantesConSusIntentosQuickSort: null,
-		nombreCursoSeleccionado: "",
+		nombreCursoSeleccionado: ""
 	},
 
 	//  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -44,8 +44,8 @@ parasails.registerPage("puntaje-estudiante", {
 						method: "get",
 						params: {
 							cursoId: this.cursoSeleccionado,
-							estudianteId: this.estudiante.id,
-						},
+							estudianteId: this.estudiante.id
+						}
 					})
 						.then(response => {
 							// Los intentos del usuario logueado, ordenados ascendentemente por fecha de creacion
@@ -55,7 +55,7 @@ parasails.registerPage("puntaje-estudiante", {
 								response.data.estudiantesConSusIntentos;
 							this.seleccionarEstudiantesConIntentos();
 							this.estudiantesConSusIntentosQuickSort = this.ordenamientoQuickSort(
-								this.estudiantesConSusIntentos,
+								this.estudiantesConSusIntentos
 							);
 							this.definirGraficoPuntuacion();
 						})
@@ -65,7 +65,7 @@ parasails.registerPage("puntaje-estudiante", {
 								title: "Error!, contacto con el administrador del sistema",
 								text: `${err}`,
 								showConfirmButton: true,
-								timer: 2000,
+								timer: 2000
 							});
 						});
 				} else {
@@ -74,7 +74,7 @@ parasails.registerPage("puntaje-estudiante", {
 						title: "No puede acceder a esta información como usuario visitante",
 						text: `${err}`,
 						showConfirmButton: true,
-						timer: 2000,
+						timer: 2000
 					});
 				}
 			}
@@ -128,7 +128,7 @@ parasails.registerPage("puntaje-estudiante", {
 			var ctx = document
 				.getElementById("graficoPuntuacionHistorica")
 				.getContext("2d");
-			var chart = new Chart(ctx, {
+			new Chart(ctx, {
 				// The type of chart we want to create
 				type: "line",
 
@@ -141,13 +141,13 @@ parasails.registerPage("puntaje-estudiante", {
 							label: this.nombreCursoSeleccionado,
 							backgroundColor: "rgb(255, 99, 132)",
 							borderColor: "rgb(255, 99, 132)",
-							data: datasetData,
-						},
-					],
+							data: datasetData
+						}
+					]
 				},
 
 				// Configuration options go here
-				options: {},
+				options: {}
 			});
 		},
 		seleccionarEstudiantesConIntentos() {
@@ -161,7 +161,7 @@ parasails.registerPage("puntaje-estudiante", {
 						nivel: 0, //modulo 1
 						medalla: "novato", //medalla mas basica
 						tiempoMaximoPorPregunta: 30, //en segundos por defecto
-						evaluacion: null,
+						evaluacion: null
 					});
 				}
 			});
@@ -188,7 +188,7 @@ parasails.registerPage("puntaje-estudiante", {
 				return newArray.concat(
 					this.ordenamientoQuickSort(left),
 					estudiantePivot,
-					this.ordenamientoQuickSort(right),
+					this.ordenamientoQuickSort(right)
 				);
 			}
 		},
@@ -205,7 +205,7 @@ parasails.registerPage("puntaje-estudiante", {
 				":" +
 				fi.getMinutes();
 			return fecha;
-		},
+		}
 	},
 	computed: {
 		intentoEvaluacionReversa() {
@@ -217,8 +217,8 @@ parasails.registerPage("puntaje-estudiante", {
 			}
 
 			return intentosReversa;
-		},
-	},
+		}
+	}
 });
 
 /**

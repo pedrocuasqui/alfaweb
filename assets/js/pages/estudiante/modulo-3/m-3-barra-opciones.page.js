@@ -312,57 +312,57 @@ parasails.registerPage("m-3-barra-opciones", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "archivo") {
-				$(function() {
+				$(() => {
 					$("#modalarchivo").modal("show");
 				});
 			}
 			if (idObjeto == "inicio") {
-				$(function() {
+				$(() => {
 					$("#modal_inicio").modal("show");
 				});
 			}
 			if (idObjeto == "insertar") {
-				$(function() {
+				$(() => {
 					$("#modalinsertar").modal("show");
 				});
 			}
 			if (idObjeto == "disenio") {
-				$(function() {
+				$(() => {
 					$("#modaldisenio").modal("show");
 				});
 			}
 			if (idObjeto == "disposicion") {
-				$(function() {
+				$(() => {
 					$("#modaldisposicion").modal("show");
 				});
 			}
 			if (idObjeto == "referencias") {
-				$(function() {
+				$(() => {
 					$("#modalreferencias").modal("show");
 				});
 			}
 			if (idObjeto == "correspondencia") {
-				$(function() {
+				$(() => {
 					$("#modalcorrespondencia").modal("show");
 				});
 			}
 			if (idObjeto == "revisar") {
-				$(function() {
+				$(() => {
 					$("#modalrevisar").modal("show");
 				});
 			}
 			if (idObjeto == "vista") {
-				$(function() {
+				$(() => {
 					$("#modalvista").modal("show");
 				});
 			}
 			if (idObjeto == "ayuda") {
-				$(function() {
+				$(() => {
 					$("#modalayuda").modal("show");
 				});
 			}
 			if (idObjeto == "comandos") {
-				$(function() {
+				$(() => {
 					$("#modalcomandos").modal("show");
 				});
 			}
@@ -380,7 +380,7 @@ parasails.registerPage("m-3-barra-opciones", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

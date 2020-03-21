@@ -249,7 +249,7 @@ parasails.registerComponent("modal-detalle-elemento", {
 				// this.msg.addEventListener("end", () => {
 				// 	console.log("stopped");
 				// });
-				this.msg.onend = event => {
+				this.msg.onend = () => {
 					this.clickStop();
 					// console.log(
 					// 	"Utterance has finished being spoken after " +

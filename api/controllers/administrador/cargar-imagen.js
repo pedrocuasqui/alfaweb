@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*jshint esversion: 8 */
 module.exports = {
 	friendlyName: "Cargar imagen",
@@ -7,14 +8,14 @@ module.exports = {
 	inputs: {
 		rutaImagenActual: {
 			type: "string",
-			required: false,
-		},
+			required: false
+		}
 	},
 
 	exits: {
 		success: {
-			description: "exito al cargar imagen",
-		},
+			description: "exito al cargar imagen"
+		}
 	},
 
 	fn: async function(inputs, exits) {
@@ -30,14 +31,14 @@ module.exports = {
 				"./assets/images/uploaded/" +
 				inputs.rutaImagenActual.substring(
 					inputs.rutaImagenActual.length - (8 + 4 + 4 + 4 + 12 + 3 + 5), // el cinco al final representa los guiones y punto en el string
-					inputs.rutaImagenActual.length,
+					inputs.rutaImagenActual.length
 				);
 
 			const path2 =
 				"./.tmp/public/images/uploaded/" +
 				inputs.rutaImagenActual.substring(
 					inputs.rutaImagenActual.length - (8 + 4 + 4 + 4 + 12 + 3 + 5), // el cinco al final representa los guiones y punto en el string
-					inputs.rutaImagenActual.length,
+					inputs.rutaImagenActual.length
 				);
 
 			fs.unlink(path1, err => {
@@ -63,7 +64,7 @@ module.exports = {
 				dirname: "../../.tmp/public/images/uploaded",
 
 				// don't allow the total upload size to exceed ~20MB
-				maxBytes: 1024 * 1024 * 200, //20MB,
+				maxBytes: 1024 * 1024 * 200 //20MB,
 				// onProgress: status=>{
 
 				//   console.log('ESTADO:'+status.written + '/' +status.stream.byteCount);
@@ -83,7 +84,7 @@ module.exports = {
 					imageBaseUrl +
 					rutaOriginal.substring(
 						rutaOriginal.length - (8 + 4 + 4 + 4 + 12 + 3 + 5), // el cinco al final representa los guiones y punto en el string
-						rutaOriginal.length,
+						rutaOriginal.length
 					);
 				sails.log(nuevoArchivo);
 
@@ -95,7 +96,7 @@ module.exports = {
 						if (err) {
 							throw err;
 						}
-					},
+					}
 				);
 
 				if (err) {
@@ -109,7 +110,7 @@ module.exports = {
 					return this.res.status; //Respuesta para axios ERROR EN EL CLIENTE
 				}
 				return this.res.ok(nuevoArchivo);
-			},
+			}
 		);
-	},
+	}
 };

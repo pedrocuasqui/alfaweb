@@ -26,9 +26,7 @@ module.exports = {
 		var req = this.req;
 		var res = this.res;
 		var estudiante = null;
-		var intentosEvaluacion = null;
 		var usuario = null;
-		var estudiantesConSusIntentos = null;
 
 		if (!req.session.userId) {
 			//no está logueado

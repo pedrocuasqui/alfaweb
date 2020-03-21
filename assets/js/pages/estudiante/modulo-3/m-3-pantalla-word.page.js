@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 parasails.registerPage("m-3-pantalla-word", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
 	//  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
@@ -205,31 +206,31 @@ parasails.registerPage("m-3-pantalla-word", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "area_trabajo") {
-				$(function() {
+				$(() => {
 					$("#modalAreaTrabajo").modal("show");
 				});
 			} else if (idObjeto == "barra_titulo") {
-				$(function() {
+				$(() => {
 					$("#modalBarraTitulo").modal("show");
 				});
 			} else if (idObjeto == "acceso_rapido") {
-				$(function() {
+				$(() => {
 					$("#modalBarraAcceso").modal("show");
 				});
 			} else if (idObjeto == "cinta_opciones") {
-				$(function() {
+				$(() => {
 					$("#modalBarraOpciones").modal("show");
 				});
 			} else if (idObjeto == "inicio_sesion") {
-				$(function() {
+				$(() => {
 					$("#modalInicioSesion").modal("show");
 				});
 			} else if (idObjeto == "barra_estado") {
-				$(function() {
+				$(() => {
 					$("#modalBarraEstado").modal("show");
 				});
 			} else if (idObjeto == "barra_desplazamiento") {
-				$(function() {
+				$(() => {
 					$("#modalBarraDesplazamiento").modal("show");
 				});
 			}
@@ -247,7 +248,7 @@ parasails.registerPage("m-3-pantalla-word", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

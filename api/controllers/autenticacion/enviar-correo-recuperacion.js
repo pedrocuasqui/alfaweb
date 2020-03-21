@@ -22,7 +22,6 @@ module.exports = {
 		var res = this.res;
 		var usuarioRecuperacion = null;
 		var passwordTemporalPlano = null;
-		var passwordTemporalEncriptada = null;
 		var usuarioEs = null;
 		/*SE DEFINE LA FUNCION QUE envia correo de confirmacion de cuenta con nodemailer */
 		const nodemailer = require("nodemailer");
@@ -39,7 +38,7 @@ module.exports = {
 			});
 
 			// send mail with defined transport object
-			let info = await transporter.sendMail({
+			await transporter.sendMail({
 				from: "pedro.cuasqui@gmail.com", // sender address
 				to: inputs.correoRecuperacion.toLowerCase(), // list of receivers
 				subject: '"alfaweb" - Restauración de contraseña" 🔐', // Subject line

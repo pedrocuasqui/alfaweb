@@ -143,7 +143,7 @@ parasails.registerPage("m-1-software", {
 			.getElementById("lienzo-svg")
 			.getElementsByTagName("g");
 		// se añade un estilo para cada objeto "g" que permita hacer el efecto de zoom con "transform: scale (1.5,1.5)"
-		for (i = 0; i < objetosg.length; i++) {
+		for (let i = 0; i < objetosg.length; i++) {
 			this.anadirEstiloObjeto(objetosg[i].getAttribute("id"));
 		}
 		//Se debe hacer aqui la evaluacion para que los elementos del DOM ya se encuentren cargados
@@ -224,29 +224,29 @@ parasails.registerPage("m-1-software", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "adobe") {
-				$(function() {
+				$(() => {
 					$("#modalAdobe").modal("show");
 				});
 			} else if (idObjeto == "eset") {
-				$(function() {
+				$(() => {
 					$("#modalEset").modal("show");
 				});
 			} else if (idObjeto == "linux") {
-				$(function() {
+				$(() => {
 					$("#modalLinux").modal("show");
 				});
 			} else if (idObjeto == "kaspersky") {
-				$(function() {
+				$(() => {
 					$("#modalKaspersky").modal("show");
 				});
 			} else if (idObjeto == "debian") {
 				//usb
-				$(function() {
+				$(() => {
 					$("#modalDebian").modal("show");
 				});
 			} else {
 				//impresora
-				$(function() {
+				$(() => {
 					$("#modalWindows").modal("show");
 				});
 			}
@@ -264,7 +264,7 @@ parasails.registerPage("m-1-software", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

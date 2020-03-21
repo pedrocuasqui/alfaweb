@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /**
  * Bootstrap
  * (sails.config.bootstrap)
@@ -24,7 +25,7 @@ module.exports.bootstrap = async function(done) {
 				id: submodulos[contador].modulo
 			});
 			if (!modulo) {
-				let SubmoduloEliminado = await SubmoduloLibro.destroyOne({
+				await SubmoduloLibro.destroyOne({
 					id: submodulos[contador].id
 				});
 			}
@@ -47,9 +48,9 @@ module.exports.bootstrap = async function(done) {
 					modulo: modulos[contador].id
 				}).fetch();
 
-				sulbmodulosEliminados.forEach(element => {});
+				sulbmodulosEliminados.forEach(() => {});
 
-				let moduloEliminado = await ModuloLibro.destroyOne({
+				await ModuloLibro.destroyOne({
 					id: modulos[contador].id
 				});
 			}
@@ -2417,7 +2418,7 @@ module.exports.bootstrap = async function(done) {
 		}).fetch();
 
 		//CURSO BIG DATA --profesor 0
-		var cursoBigData = await Curso.create({
+		await Curso.create({
 			nombre: "Curso de Big Data para ejecutivos ",
 			descripcion:
 				"Este curso revisa herramientas y conceptoss más usados en Big Data",
@@ -2430,7 +2431,7 @@ module.exports.bootstrap = async function(done) {
 		//NUEVO PROFESOR 1
 		//
 		//
-		var profesorCreado = await Profesor.create({
+		profesorCreado = await Profesor.create({
 			nombre: "Mayra C",
 			alias: "m",
 			email: "m@m.com",
@@ -2441,7 +2442,7 @@ module.exports.bootstrap = async function(done) {
 		}).fetch();
 
 		//CURSO PROGRAMACION BASICA  - profesor 1
-		var cursoProgra = await Curso.create({
+		await Curso.create({
 			nombre: "Programación básica",
 			descripcion: "conceptos básicos sobre programacion",
 			publicado: true,
@@ -2452,7 +2453,7 @@ module.exports.bootstrap = async function(done) {
 		//NUEVO PROFESOR 2
 		//
 		//
-		var profesorCreado = await Profesor.create({
+		profesorCreado = await Profesor.create({
 			nombre: "Emilio Vera",
 			alias: "j",
 			email: "pedro.cuasqui@gmail.com",
@@ -2471,7 +2472,7 @@ module.exports.bootstrap = async function(done) {
 			profesor: profesorCreado.id
 		}).fetch();
 
-		var mod1Bdd = await ModuloLibro.create({
+		await ModuloLibro.create({
 			nombreModulo: "Introduccion",
 			descripcion:
 				"Una base de datos es un conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso",
@@ -2546,7 +2547,7 @@ module.exports.bootstrap = async function(done) {
 			}
 		}).fetch();
 
-		var intentoEvaluacion = await IntentoEvaluacion.createEach([
+		await IntentoEvaluacion.createEach([
 			{
 				puntos: 1500,
 				nivel: 1,
@@ -2748,7 +2749,7 @@ module.exports.bootstrap = async function(done) {
 			}
 		}).fetch();
 
-		var intentoEvaluacion = await IntentoEvaluacion.createEach([
+		await IntentoEvaluacion.createEach([
 			{
 				puntos: 2750,
 				nivel: 1,
@@ -2891,7 +2892,7 @@ module.exports.bootstrap = async function(done) {
 			}
 		}).fetch();
 
-		var intentoEvaluacion = await IntentoEvaluacion.createEach([
+		await IntentoEvaluacion.createEach([
 			{
 				puntos: 4435,
 				nivel: 2,
@@ -2987,7 +2988,7 @@ module.exports.bootstrap = async function(done) {
 
 		var d = new Date();
 
-		var cursoEstudiante = await CursoEstudiantes.create({
+		await CursoEstudiantes.create({
 			curso_matriculados: cursoBdd.id,
 			estudiante_cursos: estudiante.id,
 			ultimoAcceso: d.getTime(),

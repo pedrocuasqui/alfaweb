@@ -30,6 +30,7 @@
 		"@sailshq/eslint": "^4.19.3",
 		"jshint": "^2.10.2",
 		"nodemon": "^1.18.10",
+		"supertest": "^4.0.2",
 		"toastr": "^2.1.4"
 	},
 	"scripts": {

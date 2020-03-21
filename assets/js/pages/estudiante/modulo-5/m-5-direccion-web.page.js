@@ -132,17 +132,17 @@ parasails.registerPage("m-5-direccion-web", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "siglas") {
-				$(function() {
+				$(() => {
 					$("#modalsiglas").modal("show");
 				});
 			}
 			if (idObjeto == "nombre") {
-				$(function() {
+				$(() => {
 					$("#modalnombre").modal("show");
 				});
 			}
 			if (idObjeto == "tipo") {
-				$(function() {
+				$(() => {
 					$("#modaltipo").modal("show");
 				});
 			}
@@ -160,7 +160,7 @@ parasails.registerPage("m-5-direccion-web", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

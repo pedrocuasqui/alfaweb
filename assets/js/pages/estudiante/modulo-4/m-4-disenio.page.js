@@ -456,83 +456,83 @@ parasails.registerPage("m-4-disenio", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "temas") {
-				$(function() {
+				$(() => {
 					$("#modaltemas").modal("show");
 				});
 			} else if (idObjeto == "colores") {
-				$(function() {
+				$(() => {
 					$("#modalcolores").modal("show");
 				});
 			} else if (idObjeto == "fuentes") {
-				$(function() {
+				$(() => {
 					$("#modalfuentes").modal("show");
 				});
 			} else if (idObjeto == "efectos") {
-				$(function() {
+				$(() => {
 					$("#modalefectos").modal("show");
 				});
 			} else if (idObjeto == "margenes") {
-				$(function() {
+				$(() => {
 					$("#modalmargenes").modal("show");
 				});
 			} else if (idObjeto == "orientacion") {
-				$(function() {
+				$(() => {
 					$("#modalorientacion").modal("show");
 				});
 			} else if (idObjeto == "tamanio") {
-				$(function() {
+				$(() => {
 					$("#modaltamanio").modal("show");
 				});
 			} else if (idObjeto == "columnas") {
-				$(function() {
+				$(() => {
 					$("#modalcolumnas").modal("show");
 				});
 			} else if (idObjeto == "saltos") {
-				$(function() {
+				$(() => {
 					$("#modalsaltos").modal("show");
 				});
 			} else if (idObjeto == "numeros") {
-				$(function() {
+				$(() => {
 					$("#modalnumeros").modal("show");
 				});
 			} else if (idObjeto == "guiones") {
-				$(function() {
+				$(() => {
 					$("#modalguiones").modal("show");
 				});
 			} else if (idObjeto == "marca") {
-				$(function() {
+				$(() => {
 					$("#modalmarca").modal("show");
 				});
 			} else if (idObjeto == "color") {
-				$(function() {
+				$(() => {
 					$("#modalcolor").modal("show");
 				});
 			} else if (idObjeto == "bordes") {
-				$(function() {
+				$(() => {
 					$("#modalbordes").modal("show");
 				});
 			} else if (idObjeto == "sangria") {
-				$(function() {
+				$(() => {
 					$("#modalsangria").modal("show");
 				});
 			} else if (idObjeto == "izquierda") {
-				$(function() {
+				$(() => {
 					$("#modalizquierda").modal("show");
 				});
 			} else if (idObjeto == "derecha") {
-				$(function() {
+				$(() => {
 					$("#modalderecha").modal("show");
 				});
 			} else if (idObjeto == "antes") {
-				$(function() {
+				$(() => {
 					$("#modalantes").modal("show");
 				});
 			} else if (idObjeto == "despues") {
-				$(function() {
+				$(() => {
 					$("#modaldespues").modal("show");
 				});
 			} else if (idObjeto == "organizar") {
-				$(function() {
+				$(() => {
 					$("#modalorganizar").modal("show");
 				});
 			}
@@ -550,7 +550,7 @@ parasails.registerPage("m-4-disenio", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

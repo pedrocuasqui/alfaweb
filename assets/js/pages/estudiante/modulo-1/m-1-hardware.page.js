@@ -188,29 +188,29 @@ parasails.registerPage("m-1-hardware", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "cpu") {
-				$(function() {
+				$(() => {
 					$("#modalCpu").modal("show");
 				});
 			} else if (idObjeto == "teclado") {
-				$(function() {
+				$(() => {
 					$("#modalTeclado").modal("show");
 				});
 			} else if (idObjeto == "mouse") {
-				$(function() {
+				$(() => {
 					$("#modalMouse").modal("show");
 				});
 			} else if (idObjeto == "monitor") {
-				$(function() {
+				$(() => {
 					$("#modalMonitor").modal("show");
 				});
 			} else if (idObjeto == "usb") {
 				//usb
-				$(function() {
+				$(() => {
 					$("#modalUsb").modal("show");
 				});
 			} else {
 				//impresora
-				$(function() {
+				$(() => {
 					$("#modalImpresora").modal("show");
 				});
 			}
@@ -228,7 +228,7 @@ parasails.registerPage("m-1-hardware", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

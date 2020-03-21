@@ -174,39 +174,39 @@ parasails.registerPage("m-7-paginas-internet", {
 	methods: {
 		infoObjeto(idObjeto) {
 			if (idObjeto == "qqcom") {
-				$(function() {
+				$(() => {
 					$("#modalqqcom").modal("show");
 				});
 			} else if (idObjeto == "youtube") {
-				$(function() {
+				$(() => {
 					$("#modalyoutube").modal("show");
 				});
 			} else if (idObjeto == "facebook") {
-				$(function() {
+				$(() => {
 					$("#modalfacebook").modal("show");
 				});
 			} else if (idObjeto == "reddit") {
-				$(function() {
+				$(() => {
 					$("#modalreddit").modal("show");
 				});
 			} else if (idObjeto == "google") {
-				$(function() {
+				$(() => {
 					$("#modalgoogle").modal("show");
 				});
 			} else if (idObjeto == "wikipedia") {
-				$(function() {
+				$(() => {
 					$("#modalwikipedia").modal("show");
 				});
 			} else if (idObjeto == "yahoo") {
-				$(function() {
+				$(() => {
 					$("#modalyahoo").modal("show");
 				});
 			} else if (idObjeto == "baidu") {
-				$(function() {
+				$(() => {
 					$("#modalbaidu").modal("show");
 				});
 			} else if (idObjeto == "taobao") {
-				$(function() {
+				$(() => {
 					$("#modaltaobao").modal("show");
 				});
 			}
@@ -224,7 +224,7 @@ parasails.registerPage("m-7-paginas-internet", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

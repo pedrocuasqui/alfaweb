@@ -1,5 +1,4 @@
 /*jshint esversion:8 */
-/* eslint-disable no-undef */
 parasails.registerPage("login", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
 	//  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
@@ -8,7 +7,7 @@ parasails.registerPage("login", {
 		formData: {
 			alias: null,
 			email: null,
-			password: null,
+			password: null
 		},
 		// For tracking client-side validation errors in our form.
 		// > Has property set to `true` for each invalid property in `formData`.
@@ -17,7 +16,7 @@ parasails.registerPage("login", {
 		},
 		usuario: "alias",
 		aliasIncorrecto: false,
-		passwordIncorrecto: false,
+		passwordIncorrecto: false
 	},
 
 	//  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -89,5 +88,5 @@ parasails.registerPage("login", {
 		//       }
 		//     });
 		// }
-	},
+	}
 });

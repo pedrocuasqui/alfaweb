@@ -30,7 +30,7 @@ parasails.registerPage("registro-usuario", {
 	//  ╩╝╚╝ ╩ ╚═╝╩╚═╩ ╩╚═╝ ╩ ╩╚═╝╝╚╝╚═╝
 
 	methods: {
-		validarFormulario(e) {
+		validarFormulario() {
 			// Clear out any pre-existing error messages.
 			this.formErrors = {};
 

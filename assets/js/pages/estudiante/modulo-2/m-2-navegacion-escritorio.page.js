@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 parasails.registerPage("m-2-navegacion-escritorio", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
 	//  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
@@ -154,27 +155,27 @@ parasails.registerPage("m-2-navegacion-escritorio", {
 	methods: {
 		infoObjeto(idObjeto) {
 			if (idObjeto == "escritorio") {
-				$(function() {
+				$(() => {
 					$("#modalEscritorioVacio").modal("show"); //codigo de bootstrap
 				});
 			} else if (idObjeto == "notificacion") {
-				$(function() {
+				$(() => {
 					$("#modalBarraDeNotificacion").modal("show");
 				});
 			} else if (idObjeto == "iconos") {
-				$(function() {
+				$(() => {
 					$("#modalIconos").modal("show");
 				});
 			} else if (idObjeto == "barra_tareas") {
-				$(function() {
+				$(() => {
 					$("#modalBarraDeTareas").modal("show");
 				});
 			} else if (idObjeto == "inicio") {
-				$(function() {
+				$(() => {
 					$("#modalBotonDeInicio").modal("show");
 				});
 			} else if (idObjeto == "inicio_rapido") {
-				$(function() {
+				$(() => {
 					$("#modalBarraDeInicioRapido").modal("show");
 				});
 			}
@@ -192,7 +193,7 @@ parasails.registerPage("m-2-navegacion-escritorio", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

@@ -173,16 +173,6 @@ parasails.registerPage("m-6-creacion-cuenta", {
 			}
 		},
 
-		infoObjeto(idObjeto) {
-			// if (idObjeto == 'escritorio') {
-			//   $(function () {
-			//     $('#modalEscritorioVacio').modal('show');
-			//   });
-			// } else if (idObjeto == 'notificacion') {
-			//   $(function () {
-			//     $('#modalBarraDeNotificacion').modal('show');
-			//   });
-		},
 		// mouseMovePc(event) {
 		//   // clientX/Y obtiene las coordenadas del elemento con respecto al elemento padre, en este caso las coordenadas con respecto a <div id="m1-computadora"
 
@@ -196,7 +186,7 @@ parasails.registerPage("m-6-creacion-cuenta", {
 		//   //una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 		//   this.mostrarToolTip = true;
 		// },
-		// mouseOutPc(evet) {
+		// mouseOutPc() {
 		//   this.mostrarToolTip = false;
 		// },
 		obtenerIndice() {

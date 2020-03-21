@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable no-unused-vars */
 /*jshint esversion:8 */
 module.exports = {
 	friendlyName: "Registro usuario",
@@ -89,7 +91,7 @@ module.exports = {
 			// send mail with defined transport object
 			if (!usuarioCreado.administrador) {
 				// si el usuario creado NO ES ADMINISTRADOR, puede confirmar su cuenta
-				let info = await transporter.sendMail({
+				await transporter.sendMail({
 					from: sails.config.custom.correoCuentaSmtp, // sender address
 					to: inputs.email.toLowerCase(), // list of receivers
 					subject: 'Confirma tu cuenta "alfaweb" ✔', // Subject line

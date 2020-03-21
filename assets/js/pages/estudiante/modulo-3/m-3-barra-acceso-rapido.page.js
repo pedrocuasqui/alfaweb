@@ -191,32 +191,32 @@ parasails.registerPage("m-3-barra-acceso-rapido", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "acceso") {
-				$(function() {
+				$(() => {
 					$("#modalAcceso").modal("show");
 				});
 			}
 			if (idObjeto == "autoguardado") {
-				$(function() {
+				$(() => {
 					$("#modalautoguardado").modal("show");
 				});
 			}
 			if (idObjeto == "guardar") {
-				$(function() {
+				$(() => {
 					$("#modalguardar").modal("show");
 				});
 			}
 			if (idObjeto == "deshacer") {
-				$(function() {
+				$(() => {
 					$("#modaldeshacer").modal("show");
 				});
 			}
 			if (idObjeto == "fuente") {
-				$(function() {
+				$(() => {
 					$("#modalfuente").modal("show");
 				});
 			}
 			if (idObjeto == "personalizar") {
-				$(function() {
+				$(() => {
 					$("#modalpersonalizar").modal("show");
 				});
 			}
@@ -234,7 +234,7 @@ parasails.registerPage("m-3-barra-acceso-rapido", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

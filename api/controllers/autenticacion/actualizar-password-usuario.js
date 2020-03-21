@@ -17,6 +17,7 @@ module.exports = {
 
 	exits: {},
 
+	// eslint-disable-next-line no-unused-vars
 	fn: async function(inputs, exits) {
 		var res = this.res;
 		var usuarioEs = null;

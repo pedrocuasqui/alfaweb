@@ -129,17 +129,17 @@ parasails.registerPage("m-3-otras-opciones", {
 
 		infoObjeto(idObjeto) {
 			if (idObjeto == "sesion") {
-				$(function() {
+				$(() => {
 					$("#modalsesion").modal("show");
 				});
 			}
 			if (idObjeto == "desplazamiento") {
-				$(function() {
+				$(() => {
 					$("#modaldesplazamiento").modal("show");
 				});
 			}
 			if (idObjeto == "estado") {
-				$(function() {
+				$(() => {
 					$("#modalestado").modal("show");
 				});
 			}
@@ -157,7 +157,7 @@ parasails.registerPage("m-3-otras-opciones", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component

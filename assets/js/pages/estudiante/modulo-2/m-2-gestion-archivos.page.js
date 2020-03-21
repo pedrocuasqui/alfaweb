@@ -169,16 +169,6 @@ parasails.registerPage("m-2-gestion-archivos", {
 			}
 		},
 
-		infoObjeto(idObjeto) {
-			// if (idObjeto == 'escritorio') {
-			//   $(function () {
-			//     $('#modalEscritorioVacio').modal('show');
-			//   });
-			// } else if (idObjeto == 'notificacion') {
-			//   $(function () {
-			//     $('#modalBarraDeNotificacion').modal('show');
-			//   });
-		},
 		mouseMovePc(event) {
 			// clientX/Y obtiene las coordenadas del elemento con respecto al elemento padre, en este caso las coordenadas con respecto a <div id="m1-computadora"
 
@@ -192,7 +182,7 @@ parasails.registerPage("m-2-gestion-archivos", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component
@@ -213,14 +203,14 @@ parasails.registerPage("m-2-gestion-archivos", {
 			//slid.bs.carousel	This event is fired when the carousel has completed its slide transition.
 
 			if (accion == "crear") {
-				$("#carouselCrear").on("slid.bs.carousel", function() {
+				$("#carouselCrear").on("slid.bs.carousel", () => {
 					let indice = $("#carouselCrear .indicador.active").text(); //obtiene el indice del indicador actual
 					let posicion = parseInt(indice) - 1;
 					_this.objetoSeleccionado.descripcion =
 						_this.indicacionesCrear[posicion].descripcion;
 				});
 			} else if (accion == "renombrar") {
-				$("#carouselRenombrar").on("slid.bs.carousel", function() {
+				$("#carouselRenombrar").on("slid.bs.carousel", () => {
 					let indice = $("#carouselRenombrar .indicador.active").text(); //obtiene el indice del indicador actual
 					let posicion = parseInt(indice) - 1;
 
@@ -228,7 +218,7 @@ parasails.registerPage("m-2-gestion-archivos", {
 						_this.indicacionesRenombrar[posicion].descripcion;
 				});
 			} else if (accion == "copiar") {
-				$("#carouselCopiar").on("slid.bs.carousel", function() {
+				$("#carouselCopiar").on("slid.bs.carousel", () => {
 					let indice = $("#carouselCopiar .indicador.active").text(); //obtiene el indice del indicador actual
 					let posicion = parseInt(indice) - 1;
 
@@ -236,7 +226,7 @@ parasails.registerPage("m-2-gestion-archivos", {
 						_this.indicacionesCopiar[posicion].descripcion;
 				});
 			} else if (accion == "eliminar") {
-				$("#carouselEliminar").on("slid.bs.carousel", function() {
+				$("#carouselEliminar").on("slid.bs.carousel", () => {
 					let indice = $("#carouselEliminar .indicador.active").text(); //obtiene el indice del indicador actual
 					let posicion = parseInt(indice) - 1;
 

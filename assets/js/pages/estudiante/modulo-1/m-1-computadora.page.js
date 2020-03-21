@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 parasails.registerPage("m-1-computadora", {
 	//  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
 	//  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
@@ -145,7 +144,7 @@ parasails.registerPage("m-1-computadora", {
 		mostrarModal() {
 			// para verficar que el DOM está listo se puede usar: $(fn)
 			// fuente: https://es.stackoverflow.com/questions/51946/cu%C3%A1l-es-la-diferencia-entre-window-onload-y-document-ready
-			$(function() {
+			$(() => {
 				$("#modalInicial").modal("show");
 			});
 		},
@@ -164,25 +163,25 @@ parasails.registerPage("m-1-computadora", {
 				// Display an info toast with no title
 				// toastr["warning"]("Are you the 6 fingered man?","titulo");
 
-				//   $(function(){
+				//   $(()=>{
 				//     $.amaran({content:{'message':'My first example!'}});
 				// });
 
-				$(function() {
+				$(() => {
 					// $.notify("Alert!", {align:"center", verticalAlign:"top"});
 
 					$("#modalCpu").modal("show");
 				});
 			} else if (idObjeto == "teclado") {
-				$(function() {
+				$(() => {
 					$("#modalTeclado").modal("show");
 				});
 			} else if (idObjeto == "mouse") {
-				$(function() {
+				$(() => {
 					$("#modalMouse").modal("show");
 				});
 			} else if (idObjeto == "monitor") {
-				$(function() {
+				$(() => {
 					$("#modalMonitor").modal("show");
 				});
 			}
@@ -201,7 +200,7 @@ parasails.registerPage("m-1-computadora", {
 			//una vez que los valores para x y y del texto del tooltip han sido establecidos, se muestra en la pantalla
 			this.mostrarToolTip = true;
 		},
-		mouseOutPc(evet) {
+		mouseOutPc() {
 			this.mostrarToolTip = false;
 
 			// El audio se encuentra en el componente modulo-contenedor-curso.component
