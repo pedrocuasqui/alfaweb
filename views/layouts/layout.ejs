@@ -121,7 +121,6 @@
         //  window.contenidoTiny =null;
         editor.on('keyup', function (e) { // no reconoce los clicks
           window.contenidoTiny = tinymce.get("mytextarea").getContent()
-          console.log("esta escribiendo");
           // $('.contenido-tiny').html(window.contenidoTiny);          
 
         });
@@ -187,12 +186,6 @@
   <!--SCRIPTS-->
   <script src="/min/production.min.js"></script>
   <!--SCRIPTS END-->
-
-  <!--  <script>
-    io.socket.on("sessions", function (msg) {
-      console.log("SE CREA UNA NUEVA SESION: ", msg);
-    });
-  </script> -->
 </body>
 
 </html>

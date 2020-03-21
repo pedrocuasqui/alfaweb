@@ -703,7 +703,6 @@ parasails.registerPage("administrar-contenido", {
 				})
 				.catch(err => {
 					if (err.response) {
-						console.log(`TIPO ERROS ${err.response}`);
 						if (err.response.status == 403) {
 							swal({
 								title: `No se ha podido crear la evaluación`,
@@ -916,9 +915,6 @@ parasails.registerPage("administrar-contenido", {
 		 * @param {* int} indexOrigen  //posicion desde donde se mueve el objeto
 		 */
 		swapPreguntas(indexDestino, indexOrigen) {
-			console.log(`NUEVA POSICION: ${indexDestino}`);
-			console.log(`ANTERIOR POSICION: ${indexOrigen}`);
-
 			if (indexDestino != indexOrigen) {
 				// desde la posicion indexDestino, elimine cero elementos, inserte el elemento de la posicion indexOrigen
 				var listaPreguntas = [...this.preguntasCuestionario];

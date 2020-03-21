@@ -58,7 +58,6 @@ module.exports = {
 			//Fuente: https://sailsjs.com/documentation/reference/web-sockets/sails-sockets/broadcast  ,,, LEER LAS NOTAS AL FI
 			datosDifundidosChat: estudiantes
 		}); */
-		console.log("SOCKET ELIMINADO");
 
 		return exits.redirect("/");
 	}

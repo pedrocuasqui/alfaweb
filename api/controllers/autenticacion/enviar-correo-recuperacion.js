@@ -46,7 +46,6 @@ module.exports = {
 				html: `<div style="background-color:#27293d; color:#c0c1c2;"><h1>Hola, ${usuarioRecuperacion.nombre},</h1><h6>Hemos recibido una solicitud para reestablecer tu cuenta <b>alfaweb</b>, si no fuiste tú ignora este mensaje, de lo contrario ingresa con la siguiente contraseña temporal: ${generatePassword}</h6> ` // html body
 			});
 
-			console.log("Message sent: %s", info.messageId);
 			// Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 		}
 		/**

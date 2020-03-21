@@ -201,7 +201,6 @@ parasails.registerComponent("modulo-login", {
 				}
 				// Si se ingresa un correo electrónico se envia la peticion de enviar, el controlador verifica que el correo se encuentre registraod, de lo contrario retorno un error 409,
 				if (inputValue) {
-					console.log(`correo de recuperacion: ${inputValue}`);
 					var formData = new FormData();
 					formData.append("correoRecuperacion", inputValue);
 					axios({

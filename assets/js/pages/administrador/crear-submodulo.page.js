@@ -236,7 +236,6 @@ parasails.registerPage("crear-submodulo", {
 		//  },
 		actualizaContTiny() {
 			this.contTiny = window.contenidoTiny;
-			console.log("esta tipeando");
 		},
 		onClickCancelar() {
 			// this.imagensTiny = window.imagenesTemporalesTiny;

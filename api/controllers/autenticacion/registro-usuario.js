@@ -111,7 +111,6 @@ module.exports = {
 				superAdministradores.forEach(sadmin => {
 					usuariosAdmin = usuariosAdmin + sadmin.email + " , ";
 				});
-				console.log(`ADMINISTRADORES ${usuariosAdmin}`);
 				//ENVIAR CORREO A TODOS LOS SUPERADMIN
 				let info = await transporter.sendMail({
 					from: sails.config.custom.correoCuentaSmtp, // sender address

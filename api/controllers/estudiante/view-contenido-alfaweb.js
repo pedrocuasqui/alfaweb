@@ -166,8 +166,6 @@ module.exports = {
 				});
 			}
 			modulo = objetoSeleccionado;
-
-			console.log("MODULO" + stringVista);
 			// return this.res.view(stringVista, {
 			// 	usuario,
 			// 	mostrarEvaluacion,
@@ -242,7 +240,6 @@ module.exports = {
 		}
 
 		// busqueda de evaluaciones del usuario
-		console.log(`el id del modulo solicitado es: ${JSON.stringify(modulo)}`);
 		var ultimasEvaluaciones = await SubmoduloLibro.find({
 			modulo: modulo.id
 		}).populate("intentosEvaluacion", {

@@ -575,7 +575,6 @@ parasails.registerComponent("modulo-ev-individual", {
 							$("#Preg" + p).css({
 								"background-color": "#27293d"
 							});
-							console.log("decolorar a pregunta de posicion:" + p);
 
 							//Se establece en null la respuestaEstudiante de la pregunta de indice p
 							this.preguntasCuestionarioRespuestas[
