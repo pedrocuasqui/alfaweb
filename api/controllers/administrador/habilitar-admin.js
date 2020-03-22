@@ -1,5 +1,6 @@
 module.exports = {
-	friendlyName: "Habilitar admin",
+	friendlyName:
+		"Habilitar admin para poder usar el usuario con sus permisos, solo un superadmin puede dar permisos al usuario administrador",
 
 	description: "",
 
