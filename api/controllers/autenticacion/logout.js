@@ -22,9 +22,6 @@ module.exports = {
 	},
 
 	fn: async function(inputs, exits) {
-		//PRIMERO:  Abandonar la sala de sockets
-		sails.sockets.leave(this.req, "estudiantesLogueados");
-
 		// SEGUNDO: Eliminar la sesion del usuario
 		// delete this.req.session;
 		this.req.session.destroy(err => {
