@@ -358,50 +358,6 @@ parasails.registerComponent("modulo-contenedor-curso", {
 			newWin.print();
 			newWin.close();
 			newWin.document.write("<h6>http://www.epn.edu.ec </h6>");
-		},
-		unirseSalaChat() {
-			//ULTIMO BLOQUE DE PRUEBA CON SOCKETS
-			/* io.socket.get(
-				"http://localhost:1337/sessions",
-				function responseFromServer(body, response) {
-					console.log(
-						"The server responded with status " +
-							response.statusCode +
-							" and said: ",
-						body
-					);
-				}
-			);
-			io.socket.on("http://localhost:1337/sessions", function(msg) {
-				console.log("SE CREA UNA NUEVA SESION: ", msg);
-			}); */
-			/*console.log(
-				"FUNCION unirseSalaChat DE modulo-contenedor-curso, DECLARACION DE SOCKET EN CLIENTE"
-			);
-			io.sails.url = "http://localhost:1337";
-			io.socket.get("http://localhost:1337/chat", function responseFromServer(
-				body,
-				response
-			) {
-				console.log(
-					"The server responded with status " +
-						response.statusCode +
-						" and said: ",
-					body
-				);
-			});
-
-			console.log("SE DECLARA LA RESPUESTA DEL SOCKET");
-			// El nombre único del evento utilizado por el cliente para identificar este mensaje. Por defecto es 'message'.
-			io.socket.on("message", data => {
-				console.log("nuevo usuario conectado");
-
-				console.log(`VERBO: ${data.verb}`);
-				// console.log(data.datosDifundidosChat);
-				// this.usuariosConectados.push(data.datosDifundidosChat);
-				this.usuariosConectados = [...data.datosDifundidosChat];
-				console.log(data.datosDifundidosChat);
-			}); */
 		}
 	},
 	computed: {
