@@ -36,7 +36,7 @@ module.exports.security = {
 		allowCredentials: true,
 		allowAnyOriginWithCredentialsUnsafe: true
 		//Fuente: https://sailsjs.com/documentation/reference/configuration/sails-config-security#?sailsconfigsecuritycors
-	}
+	},
 
 	/****************************************************************************
 	 *                                                                           *
@@ -52,5 +52,5 @@ module.exports.security = {
 	 *                                                                           *
 	 ****************************************************************************/
 
-	// csrf: false
+	csrf: true
 };
