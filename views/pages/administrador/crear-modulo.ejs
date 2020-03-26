@@ -43,13 +43,13 @@
                     <!-- ingresa imagen de portada -->
                     <div class="form-group row">
                         <div class="col-sm-3">
-                            <label>Imágen de índice: (*)</label>
+                            <label>Imagen de índice: (*)</label>
                         </div>
                         <div class="col-sm-3">
-                            <label v-if="rutaTemporal==''" for="file" class=" boton_formulario">Seleccione una Imágen
+                            <label v-if="rutaTemporal==''" for="file" class=" boton_formulario">Seleccione una Imagen
                             </label>
                             <label v-else for="file" class=" boton_formulario" @click="onClickCambiarImagen">Cambiar
-                                Imágen </label>
+                                Imagen </label>
                             <input type="file" name="multimedia" id="file" class="inputfile form-control"
                                 @change="onFileSelected" accept="image/*"
                                 :class="[computedErrorImagen && imagenTemporal=={}? 'is-invalid' : '']"

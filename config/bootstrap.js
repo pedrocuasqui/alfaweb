@@ -2532,7 +2532,7 @@ module.exports.bootstrap = async function(done) {
 					},
 
 					{
-						enunciado: `<div><p>La siguiente imagen corresponde al gestor de nombre...</p> <p><img	src="http://www.ingdiaz.org/wp-content/uploads/2018/01/j00-150x150.png"		alt="Imágen de la pregunta"
+						enunciado: `<div><p>La siguiente imagen corresponde al gestor de nombre...</p> <p><img	src="http://www.ingdiaz.org/wp-content/uploads/2018/01/j00-150x150.png"		alt="Imagen de la pregunta"
 							></img> </p> </div>`,
 						opciones: {
 							opcion1: "Gestor de datos SQL server",
@@ -2761,7 +2761,7 @@ module.exports.bootstrap = async function(done) {
 					aciertos: [0, 1],
 					preguntas: [
 						{
-							enunciado: `<div><img src="https://www.frikipandi.com/wp-content/uploads/2015/03/MySQL.jpg" alt="Imágen de la pregunta"
+							enunciado: `<div><img src="https://www.frikipandi.com/wp-content/uploads/2015/03/MySQL.jpg" alt="Imagen de la pregunta"
 							></img> </div>`,
 							opciones: {
 								opcion1: "Gestor MySQL",
@@ -2776,7 +2776,7 @@ module.exports.bootstrap = async function(done) {
 							respuestaEstudiante: "Gestor MySQL"
 						},
 						{
-							enunciado: `<div><img src="http://www.ingdiaz.org/wp-content/uploads/2018/01/j00-150x150.png" alt="Imágen de la pregunta"
+							enunciado: `<div><img src="http://www.ingdiaz.org/wp-content/uploads/2018/01/j00-150x150.png" alt="Imagen de la pregunta"
 							></img> </div>`,
 							opciones: {
 								opcion1: "Gestor de datos SQL server",
@@ -2808,7 +2808,7 @@ module.exports.bootstrap = async function(done) {
 					aciertos: [1],
 					preguntas: [
 						{
-							enunciado: `<div><img src="https://www.frikipandi.com/wp-content/uploads/2015/03/MySQL.jpg" alt="Imágen de la pregunta"
+							enunciado: `<div><img src="https://www.frikipandi.com/wp-content/uploads/2015/03/MySQL.jpg" alt="Imagen de la pregunta"
 							></img> </div>`,
 							opciones: {
 								opcion1: "Gestor MySQL",
@@ -2823,7 +2823,7 @@ module.exports.bootstrap = async function(done) {
 							respuestaEstudiante: "Gestor Oracle"
 						},
 						{
-							enunciado: `<div><img src="http://www.ingdiaz.org/wp-content/uploads/2018/01/j00-150x150.png" alt="Imágen de la pregunta"
+							enunciado: `<div><img src="http://www.ingdiaz.org/wp-content/uploads/2018/01/j00-150x150.png" alt="Imagen de la pregunta"
 							></img> </div>`,
 							opciones: {
 								opcion1: "Gestor de datos SQL server",

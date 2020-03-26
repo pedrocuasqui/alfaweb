@@ -162,7 +162,7 @@ parasails.registerComponent("modulo-ev-individual", {
         <div id="descripcion" v-html="descripcionActividad">
 				</div>
 				
-				<img src="/images/otros/iconos_evaluacion/tenor.gif" alt="Imágen de exito" height="50px" width="auto">
+				<img src="/images/otros/iconos_evaluacion/tenor.gif" alt="Imagen de exito" height="50px" width="auto">
 
 				<div class="talkbubble" v-if="usuario.nombre=='Visitante'"> 
 					<p class='mintrucciones'><em><b>NOTA: No estás logueado, si quieres guardar tu evaluación, debes registrarte o ingresar como estudiante</b></em>
