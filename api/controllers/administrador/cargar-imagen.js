@@ -26,7 +26,8 @@ module.exports = {
 
 		var nuevoArchivo = {};
 
-		if (inputs.rutaImagenActual) {
+		// Si una imágen ya está cargada, se debe pasar por parametro la ruta de la imágen que será eliminado y por medio de axios se envia la nueva imágen a cargar
+		/* 	if (inputs.rutaImagenActual) {
 			const path1 =
 				"./assets/images/uploaded/" +
 				inputs.rutaImagenActual.substring(
@@ -55,7 +56,7 @@ module.exports = {
 				}
 				//file removed
 			});
-		}
+		} */
 
 		this.req.file("multimedia").upload(
 			{
@@ -80,6 +81,7 @@ module.exports = {
 				// nuevoArchivo.location = uploadedFiles[0].fd;
 				let imageBaseUrl = sails.config.custom.imageBaseUrl;
 				let rutaOriginal = uploadedFiles[0].fd.toString();
+				sails.log(`ruta original: ${rutaOriginal}`);
 				nuevoArchivo.location =
 					imageBaseUrl +
 					rutaOriginal.substring(
