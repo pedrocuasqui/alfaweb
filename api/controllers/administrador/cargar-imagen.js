@@ -64,7 +64,7 @@ module.exports = {
 				// dirname: '../../assets/images/uploaded',
 				// dirname: "../../.tmp/public/images/uploaded",
 				dirname: require("path").resolve(
-					sails.config.appPath,
+					sails.config.baseUrl,
 					"assets/images/uploaded"
 				),
 
@@ -95,6 +95,7 @@ module.exports = {
 				sails.log(nuevoArchivo);
 
 				// destination will be created or overwritten by default.
+				// copia el archivo desde el directorio de carga original hacia la carpeta assets
 				// fs.copyFile(
 				// 	nuevoArchivo.fd,
 				// 	nuevoArchivo.fd.replace(".tmp\\public", "assets"),
