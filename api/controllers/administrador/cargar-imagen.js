@@ -63,7 +63,7 @@ module.exports = {
 				//por defecto sails usa SKIPPER para recibir archivos y texto, se puede cambiar si es necesario ir a congif/http.js
 				// dirname: '../../assets/images/uploaded',
 				// dirname: "../../.tmp/public/images/uploaded",
-				dirname: require("path").resolve(sails.config.appPath, "assets/images"),
+				// dirname: require("path").resolve(sails.config.appPath, "assets/images"),
 
 				// don't allow the total upload size to exceed ~20MB
 				maxBytes: 1024 * 1024 * 200 //20MB,
@@ -92,15 +92,15 @@ module.exports = {
 				sails.log(nuevoArchivo);
 
 				// destination will be created or overwritten by default.
-				fs.copyFile(
-					nuevoArchivo.fd,
-					nuevoArchivo.fd.replace(".tmp\\public", "assets"),
-					err => {
-						if (err) {
-							throw err;
-						}
-					}
-				);
+				// fs.copyFile(
+				// 	nuevoArchivo.fd,
+				// 	nuevoArchivo.fd.replace(".tmp\\public", "assets"),
+				// 	err => {
+				// 		if (err) {
+				// 			throw err;
+				// 		}
+				// 	}
+				// );
 
 				if (err) {
 					this.res.statusCode = 500;
