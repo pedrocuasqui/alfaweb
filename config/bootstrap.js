@@ -2252,7 +2252,80 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 2,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Cuestionario",
+					preguntas: [
+						{
+							enunciado:
+								"<p>Para enviar un correo electr&oacute;nico primero es necesario ...</p>",
+							opciones: {
+								opcion1: "Redactar una carta",
+								opcion2: "Iniciar sesión en la cuenta de correo electrónico",
+								opcion3: "Agregar un destinatario",
+								opcion4: "Enviar el correo"
+							},
+							respuesta: "Iniciar sesión en la cuenta de correo electrónico",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								'<p>En el casillero <span style="background-color: #ecf0f1; color: #3598db;"><em><strong>Para&nbsp; </strong></em></span><span style="color: #ced4d9;">se coloca ...</span></p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: "El mensaje",
+								opcion2: "Una contraseña",
+								opcion3:
+									"La dirección o direcciones de correo electrónico de destino",
+								opcion4: "El nombre de usuario"
+							},
+							respuesta:
+								"La dirección o direcciones de correo electrónico de destino",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado:
+								'<p>&iquest; El <span style="color: #3598db; background-color: #ecf0f1;"><strong>asunto&nbsp; </strong></span>es parte del correo electr&oacute;nico ?</p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: "Falso",
+								opcion2: "Verdadero",
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Verdadero",
+							pista: null,
+							pregNumero: 3
+						},
+						{
+							enunciado:
+								"<p>&iquest; Es posible adjuntar archivos en el correo ?</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: "Verdadero",
+								opcion3: "Falso",
+								opcion4: null
+							},
+							respuesta: "Verdadero",
+							pista: null,
+							pregNumero: 4
+						},
+						{
+							enunciado:
+								'<p>El paso final para enviar un correo es presionar el bot&oacute;n <span style="color: #ffffff; background-color: #3598db;">Enviar</span></p>',
+							opciones: {
+								opcion1: "Falso",
+								opcion2: "Verdadero",
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Verdadero",
+							pista: null,
+							pregNumero: 5
+						}
+					],
+					tiempoMaximoPorPregunta: "300",
+					publicada: false
+				}
 			},
 			{
 				nombreSubmodulo: "Creación de una cuenta SKYPE",

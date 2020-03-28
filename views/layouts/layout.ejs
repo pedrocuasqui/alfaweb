@@ -15,7 +15,7 @@
 
   <!-- ESTILOS DE BOOTSTRAP END-->
   <!--STYLES-->
-  <link rel="stylesheet" href="/min/production.min.css">
+  <link rel="stylesheet" href="/styles/importer.css">
   <!--STYLES END-->
 
   <!-- FONT AWESOME -->
@@ -184,7 +184,83 @@
 
   <script src="/dependencies/sails.io.js"></script>
   <!--SCRIPTS-->
-  <script src="/min/production.min.js"></script>
+  <script src="/dependencies/sails.io.js"></script>
+  <script src="/dependencies/lodash.js"></script>
+  <script src="/dependencies/vue.js"></script>
+  <script src="/dependencies/parasails.js"></script>
+  <script src="/js/components/boton-curso.component.js"></script>
+  <script src="/js/components/modal-detalle-elemento.component.js"></script>
+  <script src="/js/components/modulo-barra-nav.component.js"></script>
+  <script src="/js/components/modulo-cabecera-general.js"></script>
+  <script src="/js/components/modulo-contenedor-admin.component.js"></script>
+  <script src="/js/components/modulo-contenedor-curso.component.js"></script>
+  <script src="/js/components/modulo-ev-individual.component.js"></script>
+  <script src="/js/components/modulo-login.component.js"></script>
+  <script src="/js/components/modulo-modal-fin-actv.component.js"></script>
+  <script src="/js/components/modulo-modal-ini-actv.component.js"></script>
+  <script src="/js/components/modulo-modal-inicio.component.js"></script>
+  <script src="/js/components/modulo-panel-derecho.component.js"></script>
+  <script src="/js/components/modulo-side-var-menu.component.js"></script>
+  <script src="/js/pages/401-unauthorized.page.js"></script>
+  <script src="/js/pages/administrador/actualizar-curso.page.js"></script>
+  <script src="/js/pages/administrador/administrar-contenido.page.js"></script>
+  <script src="/js/pages/administrador/administrar-home.page.js"></script>
+  <script src="/js/pages/administrador/administrar-indice.page.js"></script>
+  <script src="/js/pages/administrador/crear-curso.page.js"></script>
+  <script src="/js/pages/administrador/crear-evaluacion.page.js"></script>
+  <script src="/js/pages/administrador/crear-modulo.page.js"></script>
+  <script src="/js/pages/administrador/crear-submodulo.page.js"></script>
+  <script src="/js/pages/administrador/puntaje-estudiante.page.js"></script>
+  <script src="/js/pages/autenticacion/actualizar-usuario.page.js"></script>
+  <script src="/js/pages/autenticacion/clave-recuperacion-cuenta.page.js"></script>
+  <script src="/js/pages/autenticacion/confirmar-usuario.page.js"></script>
+  <script src="/js/pages/autenticacion/login.page.js"></script>
+  <script src="/js/pages/autenticacion/registro-usuario.page.js"></script>
+  <script src="/js/pages/estudiante/indice-estudiante.page.js"></script>
+  <script src="/js/pages/estudiante/inicio.page.js"></script>
+  <script src="/js/pages/estudiante/interfaz-modulos.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-computadora-ev.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-computadora.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-conexion-componentes.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-encender-computadora.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-hardware-mouse.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-hardware-teclado.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-hardware.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-1/m-1-software.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-2/m-2-aplicaciones.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-2/m-2-gestion-archivos.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-2/m-2-navegacion-escritorio.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-2/m-2-papelera.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-area-trabajo.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-barra-acceso-rapido.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-barra-opciones.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-barra-titulo.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-documento-word.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-otras-opciones.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-3/m-3-pantalla-word.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-4/m-4-disenio.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-4/m-4-edicion-word.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-4/m-4-guardar.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-4/m-4-ortografia.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-4/m-4-portapapeles.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-5/m-5-direccion-web.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-5/m-5-motores-navegacion.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-5/m-5-navegador-web.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-5/m-5-navegar-internet.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-5/m-5-nombres-dominio.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-6/m-6-creacion-cuenta.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-6/m-6-cuenta-skype.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-6/m-6-envio-correo.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-6/m-6-medios-comunicacion.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-6/m-6-realizar-videollamada.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-7/m-7-facebook.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-7/m-7-paginas-internet.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-7/m-7-youtube.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-8/m-8-configuracion-basica.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-8/m-8-dispositivos-moviles.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-8/m-8-instalar-app.page.js"></script>
+  <script src="/js/pages/estudiante/modulo-8/m-8-otras-configuraciones.page.js"></script>
+  <script src="/js/pages/homepage.page.js"></script>
   <!--SCRIPTS END-->
 </body>
 
