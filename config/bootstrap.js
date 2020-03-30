@@ -2338,7 +2338,79 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 3,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Cuestionario",
+					preguntas: [
+						{
+							enunciado: "<p>Skype permite...</p>",
+							opciones: {
+								opcion1: "Hacer pagos en línea",
+								opcion2:
+									"Realizar llamadas de voz y video por medio de una aplicación",
+								opcion3: "Realizar trámites en líneas",
+								opcion4: "Solo hacer llamadas de voz"
+							},
+							respuesta:
+								"Realizar llamadas de voz y video por medio de una aplicación",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								"<p>Para registrar un nuevo usuario en SKYPE se usa el navegador</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "FALSO",
+								opcion2: "VERDADERO",
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "VERDADERO",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado:
+								"<p>&iquest; Para ingresar a la p&aacute;gina de SKYPE en el navegador se puede buscar la palabra SKYPE ?</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "VERDADERO",
+								opcion2: "FALSO",
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "VERDADERO",
+							pista: null,
+							pregNumero: 3
+						},
+						{
+							enunciado:
+								"<p>Para realizar videollamadas despu&eacute;s de registrarse es necesario...</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "Tener amigos a quienes llamar",
+								opcion2: "Tener saldo en el celular",
+								opcion3: "Descargarse la aplicación al computador",
+								opcion4: "Buscar ayuda de un tutor"
+							},
+							respuesta: "Descargarse la aplicación al computador",
+							pista: null,
+							pregNumero: 4
+						},
+						{
+							enunciado:
+								'<p>Skype permite realizar llamadas gratuitas ...<span style="white-space: pre;"> </span></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: "De Movistar a Claro",
+								opcion2: "Solo de Skype a Skype",
+								opcion3: "De Skype a Movistar",
+								opcion4: "Todas las anteriores"
+							},
+							respuesta: "Solo de Skype a Skype",
+							pista: null,
+							pregNumero: 5
+						}
+					],
+					tiempoMaximoPorPregunta: "450",
+					publicada: true
+				}
 			},
 			{
 				nombreSubmodulo: "Realizar videollamadas",
@@ -2350,7 +2422,78 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 4,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Cuestionario",
+					preguntas: [
+						{
+							enunciado:
+								"<p>Para realizar una videollamada es necesario ingresar el nombre de usuario y ....</p>",
+							opciones: {
+								opcion1: "El número de cédula",
+								opcion2: "La contraseña o password",
+								opcion3: "Los datos personales",
+								opcion4: "La dirección de domicilio"
+							},
+							respuesta: "La contraseña o password",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								"<p>Una vez dentro de la aplicaci&oacute;n se puede ver una lista de contactos</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "FALSO",
+								opcion2: "VERDADERO",
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "VERDADERO",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado:
+								"<p>Para iniciar la videollamada es necesario dar click sobre el nombre de contacto al que se quiere llamar</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "VERDADERO",
+								opcion2: "FALSO",
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "VERDADERO",
+							pista: null,
+							pregNumero: 3
+						},
+						{
+							enunciado:
+								"<p>En la videollamada se puede ver ...</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "A todos los involucrados en la llamada ",
+								opcion2: "Solo a mí ",
+								opcion3: "A nadie",
+								opcion4: "Ninguna de las anteriores"
+							},
+							respuesta: "A todos los involucrados en la llamada",
+							pista: null,
+							pregNumero: 4
+						},
+						{
+							enunciado:
+								'<p>El bot&oacute;n en forma de circunferencia de color rojo sirve para...</p>\n<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://wmstatic.global.ssl.fastly.net/ml/1230117-f-0a7be9a5-125e-467f-bbae-42282006a86e.png?width=356&amp;height=634" alt="" width="100" height="178" /></p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: "Terminar la llamada",
+								opcion2: "Iniciar la llamada",
+								opcion3: "Mantener pendiente la llamada",
+								opcion4: "Apagar la cámara pero continuar en la videollamada"
+							},
+							respuesta: "Terminar la llamada",
+							pista: null,
+							pregNumero: 5
+						}
+					],
+					tiempoMaximoPorPregunta: "450",
+					publicada: true
+				}
 			}
 		]);
 		moduloCreado = await ModuloLibro.create({
@@ -2376,7 +2519,106 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 1,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Emparejamiento",
+					preguntas: [
+						{
+							enunciado: "<p>Paso 1 para poder usar Facebook</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Registrarse en Facebook por medio de un navegador",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								"<p>Paso 2 para poder usar Facebook</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								"Ingresar el código de seguridad enviado al correo electrónico",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado:
+								"<p>Paso 3 para poder usar Facebook</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								"Ingresar mi cuenta de correo electrónico para buscar amigos",
+							pista: null,
+							pregNumero: 3
+						},
+						{
+							enunciado:
+								"<p>Paso 4 para poder usar Facebook</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Realizar la configuración de privacidad",
+							pista: null,
+							pregNumero: 4
+						},
+						{
+							enunciado:
+								"<p>Paso 5 para poder usar Facebook</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Subir una foto de perfil (opcional)",
+							pista: null,
+							pregNumero: 5
+						},
+						{
+							enunciado:
+								"<p>Paso 6 para poder usar Facebook</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Agregar amigos a la lista",
+							pista: null,
+							pregNumero: 6
+						},
+						{
+							enunciado:
+								"<p>Paso 7 para poder usar Facebook</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								"Finalmente dar click en el nombre del usuario para completar las configuraciónes",
+							pista: null,
+							pregNumero: 7
+						}
+					],
+					tiempoMaximoPorPregunta: "600",
+					publicada: true
+				}
 			},
 			{
 				nombreSubmodulo: "Como usar Youtube",
@@ -2388,7 +2630,88 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 2,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Emparejamiento",
+					preguntas: [
+						{
+							enunciado: "<p>Paso 1 para usar Youtube</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Abrir el sitio web de Youtube en el navegador",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado: "<p>Paso 2 para poder usar Youtube</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								"Se abre la ventana de Youtube donde se pueden ver videos sugeridos",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado: "<p>Paso 3 para usar Youtube</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Buscar un video entre la lista de sugeridos",
+							pista: null,
+							pregNumero: 3
+						},
+						{
+							enunciado: "<p>Paso 4 para usar Youtube</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								"Dirigirse a la barra de búsqueda de Youtube y escribir un texto ",
+							pista: null,
+							pregNumero: 4
+						},
+						{
+							enunciado: "<p>Paso 5 para usar Youtube</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								"Después de ingresar el texto de búsqueda se presenta una lista de resultados ",
+							pista: null,
+							pregNumero: 5
+						},
+						{
+							enunciado: "<p>Paso 6 para usar Youtube</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Dar click sobre el video que más nos interese.",
+							pista: null,
+							pregNumero: 6
+						}
+					],
+					tiempoMaximoPorPregunta: "400",
+					publicada: true
+				}
 			}
 		]);
 		moduloCreado = await ModuloLibro.create({

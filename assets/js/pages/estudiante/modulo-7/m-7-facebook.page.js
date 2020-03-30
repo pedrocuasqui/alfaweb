@@ -64,7 +64,7 @@ parasails.registerPage("m-7-facebook", {
 			id: "paso3",
 			titulo: "Paso 3: Buscar amigos",
 			detalle:
-				"Ingresar el correo electrónico de la persona a buscar en la siguiente interfaz, y dar clic en Buscar amigos.",
+				"Ingresar el correo electrónico de la persona que buscas en la siguiente interfaz, y dar clic en Buscar amigos.",
 			leerMas: "",
 			imgs: [
 				{
@@ -81,7 +81,7 @@ parasails.registerPage("m-7-facebook", {
 			id: "paso4",
 			titulo: "Paso 4: Configuración de la privacidad",
 			detalle:
-				"En el siguiente paso se puede revisar un poco más sobre Quién ve lo que se comparte en Facebook.      Esta información servirá para encontrar antiguos compañeros de clase o gente con la que se ha trabajado. En cualquier caso, es opcional. Dar clic en Guardar y continuar para ir al siguiente paso.      ",
+				"En el siguiente paso se puede revisar un poco más sobre quién ve lo que se comparte en Facebook.      Esta información servirá para encontrar antiguos compañeros de clase o gente con la que se ha trabajado. En cualquier caso, es opcional. Dar clic en Guardar y continuar para ir al siguiente paso.      ",
 			leerMas: "",
 			imgs: [
 				{
@@ -94,7 +94,7 @@ parasails.registerPage("m-7-facebook", {
 			id: "paso5",
 			titulo: "Paso 5: Subir tu foto",
 			detalle:
-				"Aunque no es obligatorio, es muy recomendable que personalices tu perfil, lo que implicar subir una foto, esto para que las personas que vean tu perfil sepan quién eres. Si se tiene una cámara web, se puede usar para tomar una foto de tu rostro en tiempo real, para esto dar clic en Haz una foto. Si no es el caso, también se puede subir cualquier imagen que este almacenada en el computador desde la opción Carga una foto.",
+				'Aunque no es obligatorio, es muy recomendable que personalices tu perfil, esto implica subir una foto para que las personas que vean tu perfil sepan quién eres. Si se tiene una cámara web, se puede usar para tomar una foto de tu rostro en tiempo real, para esto da clic en "Haz una foto". Si no es el caso, también se puede subir cualquier imagen que este almacenada en el computador desde la opción "Carga una foto".',
 			leerMas: "",
 			imgs: [
 				{
