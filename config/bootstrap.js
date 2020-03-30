@@ -2325,7 +2325,7 @@ module.exports.bootstrap = async function(done) {
 						}
 					],
 					tiempoMaximoPorPregunta: "300",
-					publicada: false
+					publicada: true
 				}
 			},
 			{

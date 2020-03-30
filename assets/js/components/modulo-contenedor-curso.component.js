@@ -90,8 +90,6 @@ parasails.registerComponent("modulo-contenedor-curso", {
 	mounted() {
 		window.sonido = null;
 		window.sonido = window.speechSynthesis;
-		// se conecta a sockets de Sails js
-		this.unirseSalaChat();
 	},
 
 	template: /*template*/ `
