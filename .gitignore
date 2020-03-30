@@ -131,8 +131,3 @@ lib-cov
 *.pid
 
 
-config/custom.js
-config/datastores.js
-config/session.js
-views/layouts/layout.ejs
-
