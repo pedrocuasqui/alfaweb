@@ -93,12 +93,7 @@ parasails.registerPage("registro-usuario", {
 			axios({
 				url: "/registro-usuario",
 				method: "post",
-				data: formData,
-				baseURL: "https://some-domain.com/registro-usuario/",
-				headers: {
-					"X-Requested-With": "XMLHttpRequest",
-					"Content-Type": "multipart/form-data"
-				}
+				data: formData
 			})
 				.then(response => {
 					// var pTag = document.createElement("p");
@@ -135,32 +130,39 @@ parasails.registerPage("registro-usuario", {
 					});
 				})
 				.catch(err => {
-					if (err.response.status == 409 && err.response.data.tipo == "alias") {
-						swal({
-							title: `¡No se ha podido registrar!`,
-							icon: "error",
-							type: "error",
-							text: `El alias de usuario "${this.formData.alias}" ya se encuentra registrado`,
-							confirmButtonClass: "btn-danger"
-							// buttonsStyling: false
-						});
-					} else if (
-						err.response.status == 409 &&
-						err.response.data.tipo == "email"
-					) {
-						swal({
-							title: `¡No se ha podido registrar!`,
-							icon: "error",
-							type: "error",
-							text: `El correo "${this.formData.email}" ya se encuentra registrado`,
-							confirmButtonClass: "btn-danger"
-							// buttonsStyling: false
-						});
+					if (err.response) {
+						//si existe respuesta del servidor
+						if (
+							err.response.status == 409 &&
+							err.response.data.tipo == "alias"
+						) {
+							swal({
+								title: `¡No se ha podido registrar!`,
+								icon: "error",
+								type: "error",
+								text: `El alias de usuario "${this.formData.alias}" ya se encuentra registrado`,
+								confirmButtonClass: "btn-danger"
+								// buttonsStyling: false
+							});
+						} else if (
+							err.response.status == 409 &&
+							err.response.data.tipo == "email"
+						) {
+							swal({
+								title: `¡No se ha podido registrar!`,
+								icon: "error",
+								type: "error",
+								text: `El correo "${this.formData.email}" ya se encuentra registrado`,
+								confirmButtonClass: "btn-danger"
+								// buttonsStyling: false
+							});
+						}
 					} else {
 						swal({
 							title: `No se puede registrar en este momento, intente más tarde!`,
 							icon: "error",
-							type: `error ${err}`,
+							type: `error `,
+							text: `Error: ${err}`,
 							confirmButtonClass: "btn-danger"
 						});
 					}

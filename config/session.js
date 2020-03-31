@@ -18,7 +18,7 @@ module.exports.session = {
 	 *                                                                          *
 	 ***************************************************************************/
 	secret: "c43a3692ca74e5da2d379cf083666115",
-	rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000 // 30 days,
+	rememberMeCookieMaxAge: 30 * 24 * 60 * 60 * 1000, // 30 days,
 
 	/***************************************************************************
 	 *                                                                          *
@@ -36,12 +36,12 @@ module.exports.session = {
 	// },
 
 	// Líneas para probar en desarrollo
-	// adapter: "connect-mongo",
-	// url: "mongodb://localhost:27017/alfabetizaweb",
-	// ssl: false,
-	// collection: "sessions",
-	// auto_reconnect: false,
-	// stringify: false
+	adapter: "connect-mongo",
+	url: "mongodb://localhost:27017/alfabetizaweb",
+	ssl: false,
+	collection: "sessions",
+	auto_reconnect: false,
+	stringify: false
 
 	// Lineas para Produccion
 	// adapter: "connect-mongo",
