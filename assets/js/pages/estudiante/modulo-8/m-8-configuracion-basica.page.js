@@ -22,18 +22,17 @@ parasails.registerPage("m-8-configuracion-basica", {
 		indice: null,
 		indicaciones: [
 			{ descripcion: "" },
-			{ descripcion: "Paso 1:	Ingrese su correo electrónico y su contraseña " },
+			{ descripcion: "Paso 1:	Ingresa tu correo electrónico." },
 			{
-				descripcion:
-					"Paso 2:	Dar click en el botón “Siguiente” a todas las pantallas,  hasta que salga este mensaje."
+				descripcion: "Paso 2:	Ingresa tu contraseña."
 			},
 			{
 				descripcion:
-					"Paso 3: Se configura la opción “Fecha y hora”, siempre y cuanto no muestre información actual."
+					"Paso 3: Configurar la “Fecha y hora” en caso de ser solicitado."
 			},
 			{
 				descripcion:
-					"Paso 4:	Dar click en el botón “Siguiente” a todas las pantallas, hasta obtener la pantalla que contenga el botón “TODO LISTO”."
+					"Paso 4:	Da click en el botón “Siguiente” a todas las pantallas, hasta obtener la pantalla que contenga el botón “TODO LISTO”."
 			}
 		],
 		silenciar: true,

@@ -2730,14 +2730,72 @@ module.exports.bootstrap = async function(done) {
 			{
 				nombreSubmodulo: "Configuraciones básicas",
 				descripcion:
-					"Los dispositivos móviles de paquete vienes con configuraciones básicas predeterminadas para su funcionamiento pero se permite al usuario personalizar ciertas caracteristicas del mismo para su mejor uso, estas características pueden ser: fondo de pantalla, cuenta de correo electrónico personal, etc.",
+					"Los dispositivos móviles nuevos tienen configuraciones básicas predeterminadas para su funcionamiento pero se permite al usuario personalizar ciertas características del mismo para su mejor uso, estas características pueden ser: fondo de pantalla, cuenta de correo electrónico personal, etc.",
 				enlace: "m8-configuracion-basica",
 				multimedia: {},
 				contenidoTiny: "<p>Pulse para editar</p>",
 				modulo: moduloCreado.id,
 				ordenNavegacion: 1,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Emparejamiento",
+					preguntas: [
+						{
+							enunciado: "<p>Paso 1 de configuraciones b&aacute;sicas</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Ingresar el correo electrónico personal",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								"<p>Paso 2 de configuraciones b&aacute;sicas</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Ingresar la contraseña",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado:
+								"<p>Paso 3 de configuraciones b&aacute;sicas</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Configurar la fecha y hora en caso de ser necesario",
+							pista: null,
+							pregNumero: 3
+						},
+						{
+							enunciado:
+								"<p>Paso 4 de configuraciones b&aacute;sicas</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta:
+								'Dar click en el botón siguiente hasta que se muestre el botón "TODO LISTO"',
+							pista: null,
+							pregNumero: 4
+						}
+					],
+					tiempoMaximoPorPregunta: "300",
+					publicada: true
+				}
 			},
 			{
 				nombreSubmodulo: "Otras configuraciones",
@@ -2749,7 +2807,39 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 2,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Cuestionario",
+					preguntas: [
+						{
+							enunciado:
+								"<p>Para realizar otro tipo de configuraciones se accede a la opci&oacute;n</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "Hora y Fecha",
+								opcion2: "Ajustes o configuración",
+								opcion3: "Juegos",
+								opcion4: "Google Play"
+							},
+							respuesta: "Ajustes o configuración",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								"<p>La opci&oacute;n Fondo de pantalla se encuentra dentro de ...</p>\n<p>&nbsp;</p>",
+							opciones: {
+								opcion1: "Pantalla",
+								opcion2: "Wi-Fi",
+								opcion3: "Sonido",
+								opcion4: "Almacenamiento"
+							},
+							respuesta: "Pantalla",
+							pista: null,
+							pregNumero: 2
+						}
+					],
+					tiempoMaximoPorPregunta: "200",
+					publicada: true
+				}
 			},
 			{
 				nombreSubmodulo: "Instalación de una aplicación móvil",
