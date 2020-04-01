@@ -2895,7 +2895,7 @@ module.exports.bootstrap = async function(done) {
 		var profesorCreado = await Profesor.create({
 			nombre: "oscar",
 			alias: "oscar",
-			email: "pcuasqui@asomif-ecu.com",
+			email: "pcuasqui@gmail.com",
 			password: "$2b$10$dnUGZGpto1RdygwQ2bWDdeLRceCbCuU8Q2vz4RmZD8eXOyg.qrVqe",
 			administrador: true,
 			tutor: false,

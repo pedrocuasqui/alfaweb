@@ -40,27 +40,27 @@ module.exports = {
 
 			var cursos = await Curso.find({ profesor: usuario.id }); //devuelve un arreglo con los cursos encotrados que pertenecen al profesor
 
-			var estudiantes = null;
-			var estudiantesSessions = await Sessions.find({}); //pendiente ordenar por fecha de logueo
-			if (estudiantesSessions) {
-				estudiantes = estudiantesSessions.map(item => {
-					if (item.session.usuario) {
-						item.session.usuario.fechaLogin = item.session.fechaLogin;
-					}
-					if (item.session.usuarioEs == "Estudiante") {
-						return item.session.usuario;
-					}
-				});
-			}
+			// var estudiantes = await Estudiante.find({});
+			// var estudiantesSessions = await Sessions.find({}); //pendiente ordenar por fecha de logueo
+			// if (estudiantesSessions) {
+			// 	estudiantes = estudiantesSessions.map(item => {
+			// 		if (item.session.usuario) {
+			// 			item.session.usuario.fechaLogin = item.session.fechaLogin;
+			// 		}
+			// 		if (item.session.usuarioEs == "Estudiante") {
+			// 			return item.session.usuario;
+			// 		}
+			// 	});
+			// }
 			// este if debe ir fuera del  if que evalua si hay o no sesiones
-			if (!estudiantes) {
-				//si no existe un arreglo de estudiantes logueados entonces se retorna un arreglo vacio
-				estudiantes = [];
-			}
+			// if (!estudiantes) {
+			// 	//si no existe un arreglo de estudiantes logueados entonces se retorna un arreglo vacio
+			// 	estudiantes = [];
+			// }
 
-			// var estudiantes = await Estudiante.find({ id: idsSessions })
-			// 	.populate("cursos")
-			// 	.sort("updatedAt DESC"); //buscar los estudiantes que pertenecen a un curso
+			var estudiantes = await Estudiante.find({})
+				.populate("cursos")
+				.sort("updatedAt DESC"); //buscar los estudiantes que pertenecen a un curso
 
 			var administradores = [];
 			//solo si el usuario es superAdmin tiene privilegios para ver a los dem'as administradores
