@@ -164,16 +164,15 @@ parasails.registerPage("administrar-home", {
 			);
 		},
 		fechaUltimoAccesoEstudiante(estudiante) {
-			let fechaUltimoAcceso = "01-01-1970";
-			fechaUltimoAcceso = new Date(estudiante.createdAt);
-			console.log(fechaUltimoAcceso);
-			// let fecha= fechaUltimoAcceso.toString();
+			let fechaRegistro = "01-01-1970";
+			fechaRegistro = new Date(estudiante.createdAt);
+			// let fecha= fechaRegistro.toString();
 			let fecha =
-				fechaUltimoAcceso.getDate() +
+				fechaRegistro.getDate() +
 				"/" +
-				fechaUltimoAcceso.getMonth() +
+				fechaRegistro.getMonth() +
 				"/" +
-				fechaUltimoAcceso.getFullYear();
+				fechaRegistro.getFullYear();
 
 			// return fecha.substring(1, 12);
 			return fecha;
