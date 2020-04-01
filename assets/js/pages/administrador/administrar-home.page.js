@@ -166,6 +166,7 @@ parasails.registerPage("administrar-home", {
 		fechaUltimoAccesoEstudiante(estudiante) {
 			let fechaUltimoAcceso = "01-01-1970";
 			fechaUltimoAcceso = new Date(estudiante.createdAt);
+			console.log(fechaUltimoAcceso);
 			// let fecha= fechaUltimoAcceso.toString();
 			let fecha =
 				fechaUltimoAcceso.getDate() +
