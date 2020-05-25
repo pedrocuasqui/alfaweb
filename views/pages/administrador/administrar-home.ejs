@@ -33,53 +33,51 @@
       <div class="row">
         <!-- COLUMNA IZQUIERDA: ESTUDIANTES -->
         <div class="col">
-          <div class="row " :class="[usuario.superAdmin ? 'filaEstudiantesLogueados' :'']">
+          <div class="row">
             <div class="col-sm-12 nopadding">
               <h3>Estudiantes registrados</h3>
-              <div class="list-group list-group-flush">
-                <a v-for="estudiante in estudiantes" :href="'/view-puntaje-estudiante/?estudianteId='+estudiante.id"
-                  class="list-group-item list-group-item-action flex-column align-items-start list-group-item-profesor">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{estudiante.nombre}}</h5>
-                    <span>Registro: {{fechaUltimoAccesoEstudiante(estudiante)}}</span>
-                  </div>
-                  <p class="mb-1">Cursos tomados:</p>
-                  <ul>
-                    <li v-for="curso in estudiante.cursos" class="mb-1">{{curso.nombre}}</li>
-                  </ul>
-                </a>
-
+              <div :class="[usuario.superAdmin ? 'filaEstudiantesLogueadosSA' :'filaEstudiantesLogueadosAdmin']">
+                <div class="list-group list-group-flush">
+                  <a v-for="estudiante in estudiantes" :href="'/view-puntaje-estudiante/?estudianteId='+estudiante.id"
+                    class="list-group-item list-group-item-action flex-column align-items-start list-group-item-profesor">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">{{estudiante.nombre}}</h5>
+                      <span>Registro: {{fechaUltimoAccesoEstudiante(estudiante)}}</span>
+                    </div>
+                    <p class="mb-1">Cursos tomados:</p>
+                    <ul>
+                      <li v-for="curso in estudiante.cursos" class="mb-1">{{curso.nombre}}</li>
+                    </ul>
+                  </a>
+                </div>
+                <h6 v-if="estudiantes.length==0">
+                  <p> <em> No existen estudiantes registrados</em></p>
+                </h6>
               </div>
-              <h6 v-if="estudiantes.length==0">
-                <p>NO EXISTEN ESTUDIANTES REGISTRADOS</p>
-              </h6>
+
             </div>
           </div>
 
           <!-- Solo los usuarios que tengan el campo superAdmin = true pueden ver este contenido -->
-          <div v-if="usuario.superAdmin" class="row filaAdministradores">
+          <div v-if="usuario.superAdmin" class="row ">
             <div class="col-sm-12 nopadding">
               <h3>Administradores</h3>
-              <div class="list-group">
-
-                <ul v-for="admin in administradores" class="list-group list-group-flush">
-
-                  <li
-                    class="list-group-item d-flex justify-content-between align-items-center list-group-item-profesor">
-                    {{admin.nombre}}
-
-                    <input type="checkbox" :checked="admin.confirmado" v-model="admin.confirmado" data-toggle="toggle"
-                      data-on="Habilitado" data-off="Bloqueado" data-onstyle="success" data-offstyle="danger"
-                      @click="clickOnOffAdmin(admin)">
-
-                  </li>
-
-
-                </ul>
+              <div class="filaAdministradores">
+                <div class="list-group">
+                  <ul v-for="admin in administradores" class="list-group list-group-flush">
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center list-group-item-profesor">
+                      {{admin.nombre}}
+                      <input type="checkbox" :checked="admin.confirmado" v-model="admin.confirmado" data-toggle="toggle"
+                        data-on="Habilitado" data-off="Bloqueado" data-onstyle="success" data-offstyle="danger"
+                        @click="clickOnOffAdmin(admin)">
+                    </li>
+                  </ul>
+                </div>
+                <h6 v-if="administradores.length==0">
+                  <p> <em> No existen más usuarios con rol "Administrador" registrados</em></p>
+                </h6>
               </div>
-              <h6 v-if="administradores.length==0">
-                <p>NO EXISTEN USUARIOS CON ROL ADMINISTRADOR REGISTRADOS</p>
-              </h6>
             </div>
           </div>
 
@@ -88,22 +86,21 @@
         <!-- COLUMNA DERECHA: CURSOS -->
         <div class="col">
           <h3>Cursos</h3>
-          <div class="list-group">
-
-            <boton-curso v-for="(curso,index) in cursos" :key="curso.id" :curso="curso" @guardar-curso="guardarCurso"
-              @selecciona-curso-eliminar="seleccionaCursoEliminar">
-
-            </boton-curso>
-            <div class="button list-group-item list-group-item-action">
-              <div class="d-flex w-100 justify-content-between">
-                <a href="/view-crear-curso"><i class="fas fa-plus"></i>
-                  Agregar
-                  Curso
-                </a>
+          <div class="lista-cursos">
+            <div class="list-group ">
+              <boton-curso v-for="(curso,index) in cursos" :key="curso.id" :curso="curso" @guardar-curso="guardarCurso"
+                @selecciona-curso-eliminar="seleccionaCursoEliminar">
+              </boton-curso>
+              <div class="button list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                  <a href="/view-crear-curso"><i class="fas fa-plus"></i>
+                    Agregar
+                    Curso
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-
 
         </div>
       </div>

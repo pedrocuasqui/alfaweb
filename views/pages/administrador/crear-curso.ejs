@@ -7,17 +7,17 @@
         <!-- validarFormulario se enviar como funcion, vue la interpreta y no es necesario poner "return validarFormulario()" -->
         <div class="form-group">
           <label for="nombre">Nombre del curso <a data-placement="top"
-              title="Escribir el nombre del curso que se mostrará al usuario 'Estudiante'"> <i
+              title="Nombre del curso que se mostrará al usuario 'Estudiante'"> <i
                 class="pl-2 fas fa-info-circle"></i></a></label>
           <input name="nombreCurso" class="form-control" id="nombre" autofocus type="text"
             :class="[formErrors.nombreCurso ? 'is-invalid' : '']" v-model.trim="formData.nombreCurso"
             placeholder="Ej: Alfabetización web">
-          <div class="invalid-feedback" v-if="formErrors.nombreCurso">Ingrese el nombre de un curso</div>
+          <div class="invalid-feedback" v-if="formErrors.nombreCurso">Ingrese el nombre del curso</div>
         </div>
 
         <div class="form-group">
           <label for="descripcionCurso">Descripción del curso <a data-placement="top"
-              title="Escribir una descripción corta y precisa del contenido del curso">
+              title="Descripción corta y precisa del contenido del curso">
               <i class="pl-2 fas fa-info-circle"></i></a></label>
           <input name="descripcionCurso" class="form-control" id="descripcionCurso" autofocus type="text"
             placeholder="Ej: Curso de enseñaza de informática básica">
