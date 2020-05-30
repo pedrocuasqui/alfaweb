@@ -85,17 +85,12 @@
         </div>
         <!-- COLUMNA DERECHA: CURSOS -->
         <div class="col">
-          <h3>Cursos</h3>
+
+          <h3>Cursos <a type="button" class="btn btn-primary boton_formulario" href="/view-crear-curso"
+              title="Agregar un nuevo curso">Agregar Curso</a>
+          </h3>
           <div class="lista-cursos">
             <div class="list-group ">
-              <div class="button list-group-item list-group-item-action">
-                <div class="d-flex w-100 justify-content-between">
-                  <a href="/view-crear-curso"><i class="fas fa-plus"></i>
-                    Agregar
-                    Curso
-                  </a>
-                </div>
-              </div>
               <boton-curso v-for="(curso,index) in cursos" :key="curso.id" :curso="curso" @guardar-curso="guardarCurso"
                 @selecciona-curso-eliminar="seleccionaCursoEliminar">
               </boton-curso>
