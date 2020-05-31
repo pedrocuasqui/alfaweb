@@ -6,7 +6,7 @@
         <!-- accion registrada en routes.js-->
         <!-- validarFormulario se enviar como funcion, vue la interpreta y no es necesario poner "return validarFormulario()" -->
         <div class="form-group">
-          <label for="nombre">Nombre del curso <a rel="tooltip" data-toggle="tooltip" data-placement="top"
+          <label for="nombre">Nombre del curso (*) <a data-toggle="tooltip" data-placement="top"
               title="Nombre del curso que se mostrará al usuario 'Estudiante'"> <i
                 class="pl-2 fas fa-info-circle"></i></a></label>
           <input name="nombreCurso" class="form-control" id="nombre" autofocus type="text"
@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-          <label for="descripcionCurso">Descripción del curso <a data-placement="top"
+          <label for="descripcionCurso">Descripción del curso (*) <a data-placement="top"
               title="Descripción corta y precisa del contenido del curso">
               <i class="pl-2 fas fa-info-circle"></i></a></label>
           <input name="descripcionCurso" class="form-control" id="descripcionCurso" autofocus type="text"
