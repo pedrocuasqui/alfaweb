@@ -213,6 +213,26 @@ parasails.registerPage("administrar-home", {
 						timer: 2000
 					});
 				});
+		},
+		/**
+		 * busqueda tomada de W3schools
+		 */
+		busquedaEstudiante() {
+			let input, filter, ul, li, a, i, txtValue;
+			input = document.getElementById("ingresoEstudiante");
+			filter = input.value.toUpperCase();
+			ul = document.getElementById("listaEstudiantes");
+			li = ul.getElementsByTagName("a");
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByTagName("h5")[0];
+				console.log(a);
+				txtValue = a.textContent || a.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
 		}
 	},
 	computed: {}
