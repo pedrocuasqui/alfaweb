@@ -40,7 +40,7 @@ parasails.registerComponent("modulo-cabecera-general", {
 					<div id="boton_desplegable_personalizado" class="dropdown-menu">
 						<!--Si el usuario es estudiante o administrador, se muestra cambiar contrasenia y cerrar sesion-->
 						<template  v-if="usuario.nombre !='Visitante'">
-						  <a class="dropdown-item ">Rol: {{usuario.administrador ? "Administrador":"Estudiante"}}</a>
+						  <a class="dropdown-item role_item">Rol: {{usuario.administrador ? "Administrador":"Estudiante"}}</a>
 							<a class="dropdown-item cambiar_pass_item" href="/view-actualizar-usuario">Cambia tu contraseña</a>
 							<a class="dropdown-item salir_item" href="/logout">Salir</a>
 						</template>

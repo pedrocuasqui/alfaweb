@@ -48,12 +48,12 @@ parasails.registerComponent("modulo-barra-nav", {
         <ol class="breadcrumb">
         <!--EL PRIMER ELEMENTO DEL BREADCRUMB ES SIEMPRE EL HOME-->
           <template v-if="esAdmin">  <!--si esta logueado ADMIN-->
-            <li  key="homeAdmin" class="breadcrumb-item"><a href="/administrar-home" title="Home"><a class="textoOculto"  href="/administrar-home">home</a><i class="fas fa-home" > </i></a></li>
+            <li  key="homeAdmin" class="breadcrumb-item"><a href="/administrar-home" title="Home"><a class="textoOculto"  href="/administrar-home">home</a><i class="fas fa-home fa-lg" > </i></a></li>
           </template>
           <template v-else > <!--si esta logueado cualquier OTRO USUARIO-->
-            <li v-if="breadcrumbTieneValores" key="homeEst" class="breadcrumb-item"><a href="/" title="Home"><a class="textoOculto"  href="/inicio">home</a><i class="fas fa-home" > </i></a></li>
+            <li v-if="breadcrumbTieneValores" key="homeEst" class="breadcrumb-item"><a href="/" title="Home"><a class="textoOculto"  href="/inicio">home</a><i class="fas fa-home fa-lg" > </i></a></li>
 
-            <li v-else key="homeEst" class="breadcrumb-item"><a href="/" title="Home"><a class="textoOculto"  href="/inicio">home</a><i class="fas fa-home" > </i></a></li>
+            <li v-else key="homeEst" class="breadcrumb-item"><a href="/" title="Home"><a class="textoOculto"  href="/inicio">home</a><i class="fas fa-home fa-lg" > </i></a></li>
 					</template>
 					<!--A CONTINUACION SE INSERTAN LOS ELEMENTOS ENVIADOS COMO BREADCRUMB-->
           <template v-if="isAlfaWeb" > <!-- el curso es alfaweb -->
