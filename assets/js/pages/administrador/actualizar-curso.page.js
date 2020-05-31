@@ -40,7 +40,7 @@ parasails.registerPage("actualizar-curso", {
 			var argins = this.formData;
 
 			// Valida nombre del curso:
-			if (!argins.nombreCurso) {
+			if (!argins.nombreCurso || argins.nombreCurso.trim() == "") {
 				this.formErrors.nombreCurso = true;
 			}
 

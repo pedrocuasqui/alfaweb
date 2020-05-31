@@ -66,10 +66,13 @@ parasails.registerPage("crear-submodulo", {
 			// solo se ejecutará cuando se pulse el botón Guardar Submodulo
 			this.formErrors = {};
 
-			if (!this.nombreSubmodulo) {
+			if (!this.nombreSubmodulo || this.nombreSubmodulo.trim() == "") {
 				this.formErrors.nombreSubmodulo = true;
 			}
-			if (!this.descripcionSubmodulo) {
+			if (
+				!this.descripcionSubmodulo ||
+				this.descripcionSubmodulo.trim() == ""
+			) {
 				this.formErrors.descripcionSubmodulo = true;
 			}
 			if (this.selectedFiles.length == 0 && !window.contenidoTiny) {

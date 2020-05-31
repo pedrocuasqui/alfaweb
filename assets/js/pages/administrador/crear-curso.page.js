@@ -9,7 +9,7 @@ parasails.registerPage("crear-curso", {
 		// > Has property set to `true` for each invalid property in `formData`.
 		formErrors: {
 			/* … */
-		},
+		}
 	},
 
 	//  ╦  ╦╔═╗╔═╗╔═╗╦ ╦╔═╗╦  ╔═╗
@@ -34,7 +34,7 @@ parasails.registerPage("crear-curso", {
 			var argins = this.formData;
 
 			// Valida nombre del curso:
-			if (!argins.nombreCurso) {
+			if (!argins.nombreCurso || argins.nombreCurso.trim() == "") {
 				this.formErrors.nombreCurso = true;
 			}
 
@@ -45,6 +45,6 @@ parasails.registerPage("crear-curso", {
 				//si se encuentran errores no se recarga la página
 				e.preventDefault();
 			}
-		},
-	},
+		}
+	}
 });

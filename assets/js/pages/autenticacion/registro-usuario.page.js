@@ -37,11 +37,11 @@ parasails.registerPage("registro-usuario", {
 			var argins = this.formData;
 
 			// Valida que exista un nombre de usuario:
-			if (!argins.nombre) {
+			if (!argins.nombre || argins.nombre.trim() == "") {
 				this.formErrors.nombre = true;
 			}
 			// Valida que exista alias de usuario:
-			if (!argins.alias) {
+			if (!argins.alias || argins.nombre.trim() == "") {
 				this.formErrors.alias = true;
 			}
 			// Valida exista password:

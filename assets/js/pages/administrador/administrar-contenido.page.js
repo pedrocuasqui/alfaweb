@@ -167,10 +167,16 @@ parasails.registerPage("administrar-contenido", {
 			// Limpiar el objeto de almacenamiento de errores
 			this.formErrors = {};
 			//Valida que exista un nombre de modulo
-			if (!this.objetoSeleccionado.nombre) {
+			if (
+				!this.objetoSeleccionado.nombre ||
+				this.objetoSeleccionado.nombre.trim() == ""
+			) {
 				this.formErrors.nombre = true;
 			}
-			if (!this.objetoSeleccionado.descripcion) {
+			if (
+				!this.objetoSeleccionado.descripcion ||
+				this.objetoSeleccionado.descripcion.trim() == ""
+			) {
 				this.formErrors.descripcion = true;
 			}
 
