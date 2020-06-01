@@ -507,7 +507,8 @@
                                 </div>
                                 <div class="col-sm-2">
 
-                                    <input id="tiempoPorPregunta" v-model="tiempoMaximoPorPregunta">
+                                    <input id="tiempoPorPregunta" v-model="tiempoMaximoPorPregunta" type="number"
+                                        min="30" max="7000">
                                 </div>
                                 <div class="col-sm-3"></div>
                             </div>
@@ -551,7 +552,8 @@
                         <div class="row">
                             <!--botton atras-->
                             <div class="col-auto">
-                                <a :href="navegarAtras"> <i class="fas fa-chevron-left fa-3x"></i> </a>
+                                <a :href="navegarAtras" title="Tema anterior"> <i class="fas fa-chevron-left fa-3x"></i>
+                                </a>
                             </div>
 
                             <!-- titulo modulo o submodulo-->
@@ -583,7 +585,8 @@
 
                             <!--siguiente-->
                             <div class="col-auto">
-                                <a :href="navegarSiguiente"><i class="fas fa-chevron-right fa-3x"></i>
+                                <a :href="navegarSiguiente" title="Siguiente Tema"><i
+                                        class="fas fa-chevron-right fa-3x"></i>
                                 </a>
                             </div>
                         </div>
