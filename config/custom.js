@@ -15,8 +15,8 @@ module.exports.custom = {
 	 *                                                                          *
 	 ***************************************************************************/
 	//Lieneas para desarrollo
-	baseUrl: "http://localhost:1337",
-	imageBaseUrl: "http://localhost:1337/images/uploaded/",
+	// baseUrl: "http://localhost:1337",
+	// imageBaseUrl: "http://localhost:1337/images/uploaded/",
 
 	// lineas en produccion
 	// baseUrl: "https://obscure-harbor-71757.herokuapp.com",
