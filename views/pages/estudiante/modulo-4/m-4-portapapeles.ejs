@@ -24,7 +24,8 @@
   <modulo-contenedor-curso :navegar-atras="navegarAtras" :navegar-siguiente="navegarSiguiente" :breadcrumb="breadcrumb"
     :usuario="usuario" :curso="curso" :objeto-seleccionado="objetoSeleccionado" :titulo-temporal.sync="tituloEvaluacion"
     @evaluacion-individual="evaluacionIndividual" ref="curso" :mostrar-icono-repetir="mostrarIconoRepetir"
-    @intentar-nuevamente="intentarNuevamente" :progreso="progreso" @click-asistente-buho="clickMostrarPista">
+    @intentar-nuevamente="intentarNuevamente" @cancelar-evaluacion="cancelarEvaluacion" :progreso="progreso"
+    @click-asistente-buho="clickMostrarPista">
     <!--mostrarIconoRepetir es una varible de tipo Boolean-->
 
     <!-- si el contenido retornado es un submodulo se permiten las evaluaciones -->
@@ -35,8 +36,8 @@
     </modulo-ev-individual>
     <div v-else id="contenedor-lienzo">
       <div class="contenedor-imagen-svg">
-        <svg id="lienzo-svg" class="pl-5 scaling-svg" width="486.49" height="176.05" version="1.1" viewBox="0 0 128.72 46.58"
-          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg id="lienzo-svg" class="pl-5 scaling-svg" width="486.49" height="176.05" version="1.1"
+          viewBox="0 0 128.72 46.58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <defs id="defs2">
             <clipPath id="clipPath863">
               <ellipse id="ellipse865" cx="-82.929" cy="151.95" rx="23.068" ry="25.384"

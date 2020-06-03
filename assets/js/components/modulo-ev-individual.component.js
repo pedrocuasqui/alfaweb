@@ -979,6 +979,9 @@ parasails.registerComponent("modulo-ev-individual", {
 				color += letters[Math.round(Math.random() * 15)];
 			}
 			return color;
+		},
+		cancelarEvaluacion() {
+			clearTimeout(this.bucleCuentaRegresiva);
 		}
 	},
 	computed: {

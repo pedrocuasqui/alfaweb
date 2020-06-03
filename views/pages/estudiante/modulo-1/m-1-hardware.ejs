@@ -34,7 +34,8 @@
   <modulo-contenedor-curso :navegar-atras="navegarAtras" :navegar-siguiente="navegarSiguiente" :breadcrumb="breadcrumb"
     :usuario="usuario" :curso="curso" :objeto-seleccionado="objetoSeleccionado" :titulo-temporal.sync="tituloEvaluacion"
     @evaluacion-individual="evaluacionIndividual" ref="curso" :mostrar-icono-repetir="mostrarIconoRepetir"
-    @intentar-nuevamente="intentarNuevamente" :progreso="progreso" @click-asistente-buho="clickMostrarPista">
+    @intentar-nuevamente="intentarNuevamente" @cancelar-evaluacion="cancelarEvaluacion" :progreso="progreso"
+    @click-asistente-buho="clickMostrarPista">
     <!--mostrarIconoRepetir es una varible de tipo Boolean-->
 
     <!-- si el contenido retornado es un submodulo se permiten las evaluaciones -->

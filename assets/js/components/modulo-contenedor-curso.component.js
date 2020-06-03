@@ -147,13 +147,15 @@ parasails.registerComponent("modulo-contenedor-curso", {
                     <div class="row cabecera-contenido-central">
 
                         <!--"navegacion-atras"-->
-                        <div class="col-auto" v-if="navegarAtras">
+												<div class="col-auto" v-if="navegarAtras">
+												<!--SI ESTA EN UN MODULO-->
                             <template v-if="objetoSeleccionado.nombreModulo">
                                 <a key="link" :href="navegarAtras" @click="clickStop" title="Tema anterior"> <i class="fas fa-chevron-left fa-3x"></i> </a>
                             </template>
                             <template v-else>
-
-                                <a v-if="!evIndividual" key="link" :href="navegarAtras" @click="clickStop" title="Tema anterior"> <i class="fas fa-chevron-left fa-3x"></i> </a>
+												<!--SI ESTÁ EN UN SUBMODULO -->
+																<a v-if="!evIndividual" key="link" :href="navegarAtras" @click="clickStop" title="Tema anterior"> <i class="fas fa-chevron-left fa-3x"></i> </a>
+												<!--SI ESTÁ EN UNA EVALUACION-->
                                 <a v-else  key="ev" title="Ver Contenido" @click.stop="evaluacionIndividual('contenido')"> <i class="fas fa-chevron-left fa-3x"></i> </a>
                             </template>
                         </div>
@@ -170,6 +172,8 @@ parasails.registerComponent("modulo-contenedor-curso", {
                             <a  @click="intentarNuevamente" title="Repetir reto"><i class="fas fa-redo-alt fa-3x"></i> </a>
                         </div>
 
+												<!--CANCELAR LA EVALUACION-->
+												<a v-if="evIndividual"   key="finEv" title="Cancelar Evaluación"  @click.stop="evaluacionIndividual('contenido')"> <i class="far fa-window-close fa-3x"></i> </a>
 
 
                          <div id="navegarSiguiente" class="col-auto" v-if="navegarSiguiente">
@@ -180,7 +184,7 @@ parasails.registerComponent("modulo-contenedor-curso", {
                             <!--Estoy en un submodulo, paso a evaluacion antes de pasar a otro tema-->
                             <template v-else>
                             <!--navegacion-siguiente-->
-                                <a v-if="navegarSiguiente!='/'" key="siguiente"  :href="navegarSiguiente" title="Siguiente tema" @click="clickStop" ><i class="fas fa-chevron-right fa-3x"></i> </a>
+                                <a v-if="navegarSiguiente!='/'" key="siguiente"  :href="navegarSiguiente" title="Siguiente tema" @click="cancelarEvaluacion" ><i class="fas fa-chevron-right fa-3x"></i> </a>
                                 <!--navegacion-evaluacion-->
                                 <!--<a v-else key="evaluacion" title="Evaluación" @click.stop="evaluacionIndividual"><i class="fas fa-chevron-right fa-3x"></i> </a> --><!--por defecto se muestra este boton-->
                             </template>
@@ -233,6 +237,12 @@ parasails.registerComponent("modulo-contenedor-curso", {
 		clickAsistenteBuho() {
 			this.$emit("click-asistente-buho");
 		},
+		cancelarEvaluacion() {
+			this.clickStop();
+			if (this.evIndividual) {
+				this.$emit("cancelar-evaluacion");
+			}
+		},
 		intentarNuevamente() {
 			this.$emit("intentar-nuevamente");
 		},
@@ -242,7 +252,10 @@ parasails.registerComponent("modulo-contenedor-curso", {
 				if (this.objetoSeleccionado.evaluacion) {
 					//Si existe evaluación
 					if (contenido == "contenido") {
-						//si se envia algo como par'ametro, entonces se retorna
+						//si se envia algo como par'ametro, entonces se muestra el contenido del submodulo
+
+						this.cancelarEvaluacion();
+
 						this.evIndividual = false;
 					} else {
 						//si no se pasa nada como parametro y ademas el objeto seleccionado  NO es modulo se muestra la evaluacion
