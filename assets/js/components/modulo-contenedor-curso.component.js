@@ -169,7 +169,7 @@ parasails.registerComponent("modulo-contenedor-curso", {
 
                         <!--REPETIR LA EVALUACION-->
                         <div v-if="mostrarIconoRepetir" class="col-auto">
-                            <a  @click="intentarNuevamente" title="Repetir reto"><i class="fas fa-redo-alt fa-3x"></i> </a>
+                            <a  @click="intentarNuevamente" title="Repetir evaluación"><i class="fas fa-redo-alt fa-3x"></i> </a>
                         </div>
 
 												<!--CANCELAR LA EVALUACION-->

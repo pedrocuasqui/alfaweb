@@ -58,7 +58,7 @@ parasails.registerPage("m-8-instalar-app", {
 			{ descripcion: "Paso 10: Confirmar el número ingresado. y pulsar OK" },
 			{
 				descripcion:
-					'Paso 11: Whatsapp valida que el celular exista por tanto envía un mensaje de texto con un código al celular registrado. El usuario debe abrir el mensaje enviado y copiar el código recibido en la pantalla dispuesta. En caso de no llegar el mensaje, pulsar en la opción "Reenviar SMS". '
+					'Paso 11: Whatsapp valida que el celular exista por tanto envía un mensaje de texto con un código al celular registrado. El usuario debe abrir el mensaje enviado y copiar el código recibido en la pantalla. En caso de no llegar el mensaje, pulsar en la opción "Reenviar SMS". '
 			},
 			{
 				descripcion:

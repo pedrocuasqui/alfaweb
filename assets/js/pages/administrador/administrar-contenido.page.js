@@ -603,10 +603,27 @@ parasails.registerPage("administrar-contenido", {
 		},
 		validarEvaluacion() {
 			this.formErrors = {};
+
+			this.formErrors.opciones = "";
+			this.formErrors.preguntas = "";
+			this.formErrors.tiempoNegativo = "";
+			this.formErrors.tiempoVacio = "";
 			//vALIDA QUE TODAS LAS PREGUNTAS TENGA OPCIONES, ESTA VALIDACION FUNCIONA CUANDO SE CAMBIA EL TIPO DE EVALUACION DE "EMPAREJAMIENTO" A "CUESTIONARIO"
 			if (this.preguntasCuestionario.length == 0) {
-				this.formErrors.preguntas = true;
+				this.formErrors.preguntas =
+					"\n* No se puede guardar una evaluación vacía";
 			}
+
+			if (this.tiempoMaximoPorPregunta.toString().indexOf("-") != -1) {
+				this.formErrors.tiempoNegativo = "\n * El tiempo no puede ser negativo";
+			} else if (
+				this.tiempoMaximoPorPregunta == "" ||
+				!this.tiempoMaximoPorPregunta
+			) {
+				// si el administrador borró el campo y olvidó escribir un valor para tiempo máximo, este se asigna por defecto
+				this.formErrors.tiempoVacio = "\n * Ingrese un tiempo";
+			}
+
 			var indicesConError = []; //guarda la posicion de la pregunta con error
 			if (this.tipoEvaluacion == "Cuestionario") {
 				var indice = 0; //contador de posiciones
@@ -626,30 +643,23 @@ parasails.registerPage("administrar-contenido", {
 					indice += 1; //la posicion incrementa en uno
 				});
 				if (indicesConError.length > 0) {
-					this.formErrors.opciones = true;
+					this.formErrors.opciones =
+						"* La(s) pregunta(s) Nº: " +
+						JSON.stringify(indicesConError) +
+						"\tdeben tener opciones de respuesta";
 				}
-			}
-			// si el administrador borró el campo y olvidó escribir un valor para tiempo máximo, este se asigna por defecto
-			if (this.tiempoMaximoPorPregunta == "" || !this.tiempoMaximoPorPregunta) {
-				this.tiempoMaximoPorPregunta = 20;
 			}
 
 			if (Object.keys(this.formErrors).length == 0) {
 				this.guardarEvaluacion();
 			} else {
-				texto = "";
-				if (this.formErrors.opciones) {
-					icono = "warning";
-					titulo = "Realice las siguientes correcciones";
-					texto =
-						"La(s) pregunta(s) No: " +
-						JSON.stringify(indicesConError) +
-						" no tienen opciones de respuesta";
-				} else {
-					icono = "error";
-					titulo = "Evaluación vacía";
-					texto = "NO SE PUEDE GUARDAR UNA EVALUACIÓN VACÍA";
-				}
+				icono = "warning";
+				titulo = "Realice las siguientes correcciones";
+				texto =
+					this.formErrors.opciones +
+					this.formErrors.preguntas +
+					this.formErrors.tiempoNegativo +
+					this.formErrors.tiempoVacio;
 
 				swal({
 					position: "center",
