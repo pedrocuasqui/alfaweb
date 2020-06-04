@@ -650,7 +650,13 @@ parasails.registerPage("administrar-contenido", {
 				}
 			}
 
-			if (Object.keys(this.formErrors).length == 0) {
+			// if (Object.keys(this.formErrors).length == 0) {
+			if (
+				this.formErrors.opciones == "" &&
+				this.formErrors.preguntas == "" &&
+				this.formErrors.tiempoNegativo == "" &&
+				this.formErrors.tiempoVacio == ""
+			) {
 				this.guardarEvaluacion();
 			} else {
 				icono = "warning";

@@ -2851,7 +2851,52 @@ module.exports.bootstrap = async function(done) {
 				modulo: moduloCreado.id,
 				ordenNavegacion: 3,
 				color: moduloCreado.color, //el color del padre se hereda a los hijos,
-				evaluacion: null
+				evaluacion: {
+					tipo: "Emparejamiento",
+					preguntas: [
+						{
+							enunciado:
+								'<p>Las aplicaciones en android se pueden instalar por medio de___________ que tiene el siguiente icono</p>\n<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Play_Arrow_logo.svg/1200px-Google_Play_Arrow_logo.svg.png" alt="" width="127" height="136" /></p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "Google Play",
+							pista: null,
+							pregNumero: 1
+						},
+						{
+							enunciado:
+								'<p>Los pasos mostrados en la imagen corresponden a la instalaci&oacute;n de...</p>\n<p><img src="https://iniciar-sesion.biz/wp-content/uploads/2018/02/instalar-e-iniciar-sesi%C3%B3n-en-WhatsApp.jpg" alt="" width="437" height="393" /></p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "WhatsApp",
+							pista: null,
+							pregNumero: 2
+						},
+						{
+							enunciado:
+								'<p>La im&aacute;gen muestra _____________ de la instalaci&oacute;n de WhatsApp</p>\n<p><img src="https://moviles.info/wp-content/uploads/2018/10/WhatsApp-Image-2018-10-15-at-17.48.33-576x1024.jpeg" alt="" width="335" height="596" /></p>\n<p>&nbsp;</p>\n<p>&nbsp;</p>',
+							opciones: {
+								opcion1: null,
+								opcion2: null,
+								opcion3: null,
+								opcion4: null
+							},
+							respuesta: "El último paso",
+							pista: null,
+							pregNumero: 3
+						}
+					],
+					tiempoMaximoPorPregunta: "180",
+					publicada: true
+				}
 			}
 		]);
 
