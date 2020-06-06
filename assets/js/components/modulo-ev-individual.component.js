@@ -943,13 +943,18 @@ parasails.registerComponent("modulo-ev-individual", {
 						swal({
 							icon: "info",
 							title: "Pista!!!!!",
-							text: this.preguntaSeleccionadaJuegoEmparejamiento.pista,
+							text: `${
+								this.preguntaSeleccionadaJuegoEmparejamiento.pista == "" ||
+								!this.preguntaSeleccionadaJuegoEmparejamiento.pista
+									? "No existen pistas"
+									: this.preguntaSeleccionadaJuegoEmparejamiento.pista
+							}`,
 							showConfirmButton: true
 						});
 					} else {
 						swal({
 							icon: "info",
-							title: "Primero seleccione un enunciado",
+							title: "Debe seleccionar un enunciado",
 							showConfirmButton: true,
 							timer: 3000
 						});
@@ -958,9 +963,18 @@ parasails.registerComponent("modulo-ev-individual", {
 					swal({
 						icon: "info",
 						title: "Pista!!!!!",
-						text: this.preguntasCuestionarioRespuestas[
-							this.indicePreguntaCuestionario
-						].pista,
+						text: ` ${
+							this.preguntasCuestionarioRespuestas[
+								this.indicePreguntaCuestionario
+							].pista == "" ||
+							!this.preguntasCuestionarioRespuestas[
+								this.indicePreguntaCuestionario
+							].pista
+								? "No existen pistas"
+								: this.preguntasCuestionarioRespuestas[
+										this.indicePreguntaCuestionario
+								  ].pista
+						}`,
 						showConfirmButton: true
 					});
 				}

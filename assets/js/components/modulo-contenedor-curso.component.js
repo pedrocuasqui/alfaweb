@@ -173,7 +173,7 @@ parasails.registerComponent("modulo-contenedor-curso", {
                         </div>
 
 												<!--CANCELAR LA EVALUACION-->
-												<a v-if="evIndividual"   key="finEv" title="Cancelar Evaluación"  @click.stop="evaluacionIndividual('contenido')"> <i class="far fa-window-close fa-3x"></i> </a>
+												<a v-if="evIndividual"   key="finEv" title="Cerrar evaluación"  @click.stop="evaluacionIndividual('contenido')"> <i class="far fa-window-close fa-3x"></i> </a>
 
 
                          <div id="navegarSiguiente" class="col-auto" v-if="navegarSiguiente">

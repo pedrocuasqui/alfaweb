@@ -140,6 +140,7 @@ parasails.registerPage("m-2-gestion-archivos", {
 		 * LLamado desde modulo-contenedor-curso cuando se pulse el icono de repetir la evaluacion
 		 */
 		cancelarEvaluacion() {
+			this.mostrarIconoRepetir = false;
 			this.$refs.componenteEvaluacion.cancelarEvaluacion();
 		},
 		intentarNuevamente() {

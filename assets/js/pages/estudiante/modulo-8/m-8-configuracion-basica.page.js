@@ -88,6 +88,7 @@ parasails.registerPage("m-8-configuracion-basica", {
 		 * LLamado desde modulo-contenedor-curso cuando se pulse el icono de repetir la evaluacion
 		 */
 		cancelarEvaluacion() {
+			this.mostrarIconoRepetir = false;
 			this.$refs.componenteEvaluacion.cancelarEvaluacion();
 		},
 		intentarNuevamente() {

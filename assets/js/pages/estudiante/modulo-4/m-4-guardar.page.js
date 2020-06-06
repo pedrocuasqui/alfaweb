@@ -162,6 +162,7 @@ parasails.registerPage("m-4-guardar", {
 		 * LLamado desde modulo-contenedor-curso cuando se pulse el icono de repetir la evaluacion
 		 */
 		cancelarEvaluacion() {
+			this.mostrarIconoRepetir = false;
 			this.$refs.componenteEvaluacion.cancelarEvaluacion();
 		},
 		intentarNuevamente() {
