@@ -2215,7 +2215,7 @@ module.exports.bootstrap = async function(done) {
 			{
 				nombreSubmodulo: "Creación de una cuenta de correo electrónico",
 				descripcion:
-					"Correo electrónico es un servicio electrónico mediante el cual se puede enviar y recibir mensaje de manera instantánea mediante Internet.",
+					"El correo electrónico es un servicio mediante el cual se puede enviar y recibir mensajes de manera instantánea mediante Internet.",
 				enlace: "m6-creacion-cuenta",
 				multimedia: {},
 				contenidoTiny: "<p>Pulse para editar</p>",
@@ -2900,7 +2900,7 @@ module.exports.bootstrap = async function(done) {
 			}
 		]);
 
-		sails.log("creacion de curso y modulos correcta!");
+		sails.log("creación de curso y módulos correcta!");
 	}
 
 	var cursos = await Curso.find({});
@@ -3530,7 +3530,7 @@ module.exports.bootstrap = async function(done) {
 			createdAt: d.getTime(),
 			updatedAt: d.getTime()
 		});
-		sails.log("creacion de estudiante correcta!");
+		sails.log("creación de estudiante correcta!");
 	}
 
 	// ```
