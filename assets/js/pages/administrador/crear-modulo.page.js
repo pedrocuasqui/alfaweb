@@ -72,10 +72,10 @@ parasails.registerPage("crear-modulo", {
 				// Expresion regular que evalua si la imagen tiene cualquier tipo
 
 				var regExpImage = new RegExp(
-					"image.(jpg)|image.(png)|image.(jpeg)|image.(gif)"
+					".(jpg)|.(png)|.(jpeg)|.(gif)|.(JPG)|.(PNG)|.(JPEG)|.(GIF)"
 				);
 
-				if (!regExpImage.exec(this.imagenPortada.type)) {
+				if (!regExpImage.exec(this.rutaTemporal)) {
 					this.formErrors.typeFile = true;
 				}
 			}
@@ -137,7 +137,7 @@ parasails.registerPage("crear-modulo", {
 			})
 				.then(response => {
 					_this.imagenPortada = response.data;
-					$("#imagenCargadaUsuario").attr("src", response.data);
+					// $("#imagenCargadaUsuario").attr("src", response.data);
 					_this.rutaTemporal = response.data.location;
 					this.uploadPercentage = false;
 				})

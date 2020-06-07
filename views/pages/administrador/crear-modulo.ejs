@@ -71,10 +71,11 @@
                             </div>
                             <div class="imagen-portada-modulo">
                                 <!-- error GET al tratar de obtener la imagen obtenido del servidor, sucede porque SAILS CARGA LA IMAGEN AL SERVIDOR Y GRUNT DEBE ACTUALIZAR ESTAS IMAGENES EN LA CARPETA TEMP Y ESO LE TOMA UN POCO DE TIEMPO -->
-                                <!-- <img v-if="rutaTemporal!=''" :src="rutaTemporal"
-                                    alt="Previsualización de imagen cargada"> -->
-                                <img id="imagenCargadaUsuario" alt="Previsualización de imagen cargada">
-                                <img src="/images/otros/image_placeholder.jpg" alt="Imagen vacía">
+                                <img v-if="rutaTemporal!=''" :src="rutaTemporal"
+                                    alt="Previsualización de imagen cargada">
+                                <!-- <img id="imagenCargadaUsuario" alt="Previsualización de imagen cargada"
+                                    :src="imagenPortada"> -->
+                                <img v-else src="/images/otros/image_placeholder.jpg" alt="Imagen vacía">
                             </div>
                             <div class="invalid-feedback" v-if="formErrors.imagenPortada ">
                                 Seleccione un archivo de
