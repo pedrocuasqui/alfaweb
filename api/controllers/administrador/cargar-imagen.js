@@ -25,6 +25,7 @@ module.exports = {
 		const fs = require("fs");
 
 		var nuevoArchivo = {};
+		var archivoNuevo = null;
 
 		// Si una imágen ya está cargada, se debe pasar por parametro la ruta de la imágen que será eliminado y por medio de axios se envia la nueva imágen a cargar
 		/* 	if (inputs.rutaImagenActual) {
@@ -61,13 +62,12 @@ module.exports = {
 		this.req.file("multimedia").upload(
 			{
 				//por defecto sails usa SKIPPER para recibir archivos y texto, se puede cambiar si es necesario ir a congif/http.js
-				dirname: "../../assets/images/uploaded",
+				// dirname: "../../assets/images/uploaded",
 				// dirname: "../../.tmp/public/images/uploaded",
-				/* 	dirname: require("path").resolve(
+				dirname: require("path").resolve(
 					sails.config.appPath,
-					"assets/images/uploaded"
-				), */
-
+					".tmp/public/images/uploaded"
+				),
 				// don't allow the total upload size to exceed ~20MB
 				maxBytes: 1024 * 1024 * 200 //20MB,
 				// onProgress: status=>{
@@ -78,21 +78,21 @@ module.exports = {
 				// }
 			},
 			(err, uploadedFiles) => {
-				sails.log("exito al recibir");
 				//  `fd` (file descriptor)
-
-				nuevoArchivo = uploadedFiles[0];
-				// nuevoArchivo.location = uploadedFiles[0].fd;
-				let imageBaseUrl = sails.config.custom.imageBaseUrl;
-				let rutaOriginal = uploadedFiles[0].fd.toString();
-				sails.log(`ruta original: ${rutaOriginal}`);
-				nuevoArchivo.location =
-					imageBaseUrl +
-					rutaOriginal.substring(
-						rutaOriginal.length - (8 + 4 + 4 + 4 + 12 + 3 + 5), // el cinco al final representa los guiones y punto en el string
-						rutaOriginal.length
-					);
-				sails.log(nuevoArchivo);
+				////////////////////////////////////////////
+				//mueve el archivo a otra ubicacion
+				// nuevoArchivo = uploadedFiles[0];
+				// // nuevoArchivo.location = uploadedFiles[0].fd;
+				// let imageBaseUrl = sails.config.custom.imageBaseUrl;
+				// let rutaOriginal = uploadedFiles[0].fd.toString();
+				// sails.log(`ruta original: ${rutaOriginal}`);
+				// nuevoArchivo.location =
+				// 	imageBaseUrl +
+				// 	rutaOriginal.substring(
+				// 		rutaOriginal.length - (8 + 4 + 4 + 4 + 12 + 3 + 5), // el cinco al final representa los guiones y punto en el string
+				// 		rutaOriginal.length
+				// 	);
+				// sails.log(nuevoArchivo);
 
 				// destination will be created or overwritten by default.
 				// copia el archivo desde el directorio de carga original hacia la carpeta assets
@@ -116,7 +116,36 @@ module.exports = {
 					this.res.status = 400;
 					return this.res.status; //Respuesta para axios ERROR EN EL CLIENTE
 				}
-				return this.res.ok(nuevoArchivo);
+
+				sails.log("exito al recibir");
+
+				archivoNuevo = uploadedFiles[0].fd;
+
+				sails.log(archivoNuevo);
+				var SkipperDisk = require("skipper-disk");
+				var fileAdapter = SkipperDisk({
+					dirname: require("path").resolve(
+						sails.config.appPath,
+						".tmp/public/images/uploaded"
+					)
+				});
+
+				// set the filename to the same file as the user uploaded
+				this.res.set(
+					"Content-disposition",
+					"attachment; filename='" + "ArchivoRecibidoImagen" + "'"
+				);
+
+				// Stream the file down
+				fileAdapter
+					.read(archivoNuevo)
+					.on("error", err => {
+						return res.serverError(err);
+					})
+					.pipe(this.res);
+				sails.log("FileAdapter");
+				// return this.res.ok(nuevoArchivo);
+				return this.res.ok(archivoNuevo);
 			}
 		);
 	}

@@ -137,7 +137,7 @@ parasails.registerPage("crear-modulo", {
 			})
 				.then(response => {
 					_this.imagenPortada = response.data;
-
+					$("#imagenCargadaUsuario").attr("src", response.data);
 					_this.rutaTemporal = response.data.location;
 					this.uploadPercentage = false;
 				})
