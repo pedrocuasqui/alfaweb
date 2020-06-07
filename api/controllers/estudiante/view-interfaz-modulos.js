@@ -106,8 +106,12 @@ module.exports = {
 			//selecciono los elementos anteriores y posteriores al objeto seleccionado
 			for (let i = 0; i <= arreglo.length - 1; i++) {
 				if (arreglo[i].objetoId == objetoSeleccionado.id) {
-					//si el objeto es el primero
-					if (i == 0) {
+					if (arreglo.length == 1) {
+						// si el objeto es el único de la lista
+						navegarAtras = "/indice-estudiante/?cursoId=" + curso.id;
+						navegarSiguiente = "/indice-estudiante/?cursoId=" + curso.id;
+					} else if (i == 0 && arreglo.length > 1) {
+						//si el objeto es el primero  de una lista de mas de uno
 						// el anterior retorna al indice
 						navegarAtras = "/indice-estudiante/?cursoId=" + curso.id;
 						navegarSiguiente =
@@ -122,7 +126,7 @@ module.exports = {
 							arreglo[i - 1].objetoId +
 							"&tipoContenido=" +
 							arreglo[i - 1].tipoContenido;
-						navegarSiguiente = "/";
+						navegarSiguiente = "/indice-estudiante/?cursoId=" + curso.id;
 					} else {
 						navegarAtras =
 							"/interfaz-modulos/?objetoId=" +
