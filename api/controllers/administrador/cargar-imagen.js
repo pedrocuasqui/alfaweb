@@ -64,9 +64,13 @@ module.exports = {
 				//por defecto sails usa SKIPPER para recibir archivos y texto, se puede cambiar si es necesario ir a congif/http.js
 				// dirname: "../../assets/images/uploaded",
 				// dirname: "../../.tmp/public/images/uploaded",
-				dirname: require("path").resolve(
+				/* dirname: require("path").resolve(
 					sails.config.appPath,
 					".tmp/public/images/uploaded"
+				), */
+				dirname: require("path").resolve(
+					sails.config.appPath,
+					"assets/images/uploaded"
 				),
 				// don't allow the total upload size to exceed ~20MB
 				maxBytes: 1024 * 1024 * 200 //20MB,
@@ -123,12 +127,7 @@ module.exports = {
 
 				sails.log(archivoNuevo);
 				var SkipperDisk = require("skipper-disk");
-				var fileAdapter = SkipperDisk({
-					dirname: require("path").resolve(
-						sails.config.appPath,
-						".tmp/public/images/uploaded"
-					)
-				});
+				var fileAdapter = SkipperDisk();
 
 				// set the filename to the same file as the user uploaded
 				this.res.set(
