@@ -105,35 +105,18 @@
               </div>
               <div :id="'collapse'+index" class="collapse" :aria-labelledby="'heading'+index"
                 data-parent="#accordionIntentosEvaluacion">
-                <div class="card-body">
+                <div class="card-body color_fondo_evaluaciones">
                   <div>
-                    <template v-if="intento.evaluacion.tipo=='Cuestionario'">
-
-                      <div class="row" v-for="(pregunta, index) in intento.evaluacion.preguntas">
-                        <div class="col-sm-6" v-html="pregunta.enunciado"></div>
-                        <div class="col-sm-6">
-                          <p
-                            :class="[pregunta.respuestaEstudiante==pregunta.respuesta ? 'respuesta_correcta' : 'respuesta_erronea']">
-                            Tu respuesta:
-                            {{ pregunta.respuestaEstudiante == null ? "NO RESPONDE": pregunta.respuestaEstudiante}}</p>
-                          <div>Respuesta correcta: {{pregunta.respuesta}}</div>
-                        </div>
+                    <div class="row" v-for="(pregunta, index) in intento.evaluacion.preguntas">
+                      <div class="col-sm-6" v-html="pregunta.enunciado"></div>
+                      <div class="col-sm-6">
+                        <p
+                          :class="[pregunta.respuestaEstudiante==pregunta.respuesta ? 'respuesta_correcta' : 'respuesta_erronea']">
+                          Tu respuesta:
+                          {{ pregunta.respuestaEstudiante == null ? "NO RESPONDE": pregunta.respuestaEstudiante}}</p>
+                        <div>Respuesta correcta: {{pregunta.respuesta}}</div>
                       </div>
-                    </template>
-
-                    <template v-else-if="intento.evaluacion.tipo=='Emparejamiento'">
-                      <div class="row" v-for="(pregunta, index) in intento.evaluacion.preguntas">
-                        <div class="col-sm-6"> {{pregunta.enunciado}}</div>
-                        <div class="col-sm-6">
-                          <p
-                            :class="[pregunta.respuestaEstudiante==pregunta.respuesta ? 'respuesta_correcta' : 'respuesta_erronea']">
-                            Tu respuesta:
-                            {{ pregunta.respuestaEstudiante == null ? "NO RESPONDE": pregunta.respuestaEstudiante}}</p>
-                          <div>Respuesta correcta: {{pregunta.respuesta}}</div>
-                        </div>
-                      </div>
-                    </template>
-
+                    </div>
                   </div>
 
 

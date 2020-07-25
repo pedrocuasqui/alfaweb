@@ -73,7 +73,7 @@ module.exports = {
 		modulo: {
 			//el nombre de esta propiedad es el definido en el modulo 'Curso'--> propiedad 'moduloLibro', propiedad 'via'    un curso puede tener varios ModulosLibro curso -->ModulosLibro
 			model: "modulolibro", //en minusculas
-			// required: true
+			// required: true // se establece en falso para poder eliminar el módulo al que pertence esta evaluación
 		},
 		intentosEvaluacion: {
 			//Un submodulo tiene varios intentos de evaluacion     Submodulo-->IntentosEvaluacion

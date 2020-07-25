@@ -218,12 +218,12 @@ parasails.registerComponent("modulo-ev-individual", {
         <p class="evFinPtos mintrucciones">Puntos de la evaluación: {{puntosOtenidosAnimados}} <img class="puntos_final" src="/images/otros/iconos_evaluacion/lingote-de-oro.svg" > </p>  <!--Puntos Obtenidos:{{puntosObtenidos}}-->
         <p class="evFinPtos mintrucciones">Tus puntos acumulados son : {{puntosAnimados}} <img class="puntos_final" src="/images/otros/iconos_evaluacion/gold-ingot.svg"></p> <!--puntos-->
         <template  v-if="usuario.nombre!='Visitante'"> 
-            <p class="mintrucciones" v-if="subeDeNivelComp"> Has pasado al siguiente nivel</p>
-            <p class="mintrucciones" v-else>Nivel actual: {{nivel}} / {{numeroSubmodulosCurso}}</p>
-            <p class="mintrucciones" v-if="porcentajeAvanceSubmodulos==100"> FELICIDADES, YA HAS COMPLETADO TODOS LOS MODULOS, ERES UN GRADUADO!!</p>
+            <p class="evFinPtos mintrucciones" v-if="subeDeNivelComp"> Has pasado al siguiente nivel</p>
+            <p class="evFinPtos mintrucciones" v-else>Nivel actual: {{nivel}} / {{numeroSubmodulosCurso}}</p>
+            <p class="evFinPtos mintrucciones" v-if="porcentajeAvanceSubmodulos==100"> FELICIDADES, YA HAS COMPLETADO TODOS LOS MODULOS, ERES UN GRADUADO!!</p>
             <!--<p v-else>Eres un: {{medalla}}</p>-->
 						<div>
-							<p class="mintrucciones">Tu progreso del curso es : {{porcentajeAvanceSubmodulos}} %</p> 
+							<p class="evFinPtos mintrucciones">Tu progreso del curso es : {{porcentajeAvanceSubmodulos}} %</p> 
 							<div class="progress">
 								<div class="progress-bar" role="progressbar" :style="'width:'+porcentajeAvanceSubmodulos+'%'" :aria-valuenow="porcentajeAvanceSubmodulos" aria-valuemin="0" aria-valuemax="100"></div>
 						</div> 
