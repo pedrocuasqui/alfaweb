@@ -47,9 +47,9 @@ module.exports.datastores = {
 		 ***************************************************************************/
 		/*Mongo db por defecto no tiene habilitada la autenticacion ni autorizacion*/
 		//Lineas para desarrollo => Descomentar estas líneas de código para probar la base local
-		adapter: "sails-mongo",
-		url: "mongodb://localhost:27017/alfabetizaweb",
-		ssl: false
+		// adapter: "sails-mongo",
+		// url: "mongodb://localhost:27017/alfabetizaweb",
+		// ssl: false
 		//Lineas para produccion= >Descomentar estas lineas de código para conectarse a Mongo en línea
 		/* adapter: "sails-mongo",
 		url:
@@ -57,5 +57,5 @@ module.exports.datastores = {
 		ssl: true,
 		replicaSet: "alfabetizaweb-shard-0",
 		authSource: "admin" */
-	}
+	},
 };

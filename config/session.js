@@ -35,13 +35,13 @@ module.exports.session = {
 	//   return !!req.path.match(req._sails.LOOKS_LIKE_ASSET_RX);
 	// },
 
-	// Líneas para probar en desarrollo
-	adapter: "connect-mongo",
-	url: "mongodb://localhost:27017/alfabetizaweb",
-	ssl: false,
-	collection: "sessions",
-	auto_reconnect: false,
-	stringify: false
+	// // Líneas para probar en desarrollo
+	// adapter: "connect-mongo",
+	// url: "mongodb://localhost:27017/alfabetizaweb",
+	// ssl: false,
+	// collection: "sessions",
+	// auto_reconnect: false,
+	// stringify: false
 
 	// Lineas para Produccion
 	// adapter: "connect-mongo",
