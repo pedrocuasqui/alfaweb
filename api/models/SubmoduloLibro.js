@@ -19,7 +19,7 @@ module.exports = {
 		nombreSubmodulo: {
 			type: "string",
 			required: true,
-			columnName: "nombreSubmodulo" //sirve para cuando existe una conexion a diferentes bases de datos
+			columnName: "nombreSubmodulo", //sirve para cuando existe una conexion a diferentes bases de datos
 			//unique: true
 			//defaulsTo:'', establece un valor por defecto
 			//columnType: '' //define el tipo de columna del campo de la base de datos
@@ -30,36 +30,36 @@ module.exports = {
 		descripcion: {
 			type: "string",
 			allowNull: true,
-			columnName: "descripcion"
+			columnName: "descripcion",
 		},
 		enlace: {
 			type: "string",
-			columnName: "enlace"
+			columnName: "enlace",
 		},
 		multimedia: {
 			type: "json",
 			required: false,
-			columnName: "multimedia"
+			columnName: "multimedia",
 		},
 		contenidoTiny: {
 			type: "string",
 			required: false,
-			columnName: "contenidoTiny"
+			columnName: "contenidoTiny",
 		},
 		ordenNavegacion: {
 			type: "Number",
 			required: false,
-			columnName: "ordenNavegacion"
+			columnName: "ordenNavegacion",
 		},
 		color: {
 			type: "string",
 			required: false,
-			columnName: "color"
+			columnName: "color",
 		},
 		evaluacion: {
 			type: "json",
 			required: false,
-			columnName: "evaluacion"
+			columnName: "evaluacion",
 		},
 
 		// }
@@ -73,12 +73,12 @@ module.exports = {
 		modulo: {
 			//el nombre de esta propiedad es el definido en el modulo 'Curso'--> propiedad 'moduloLibro', propiedad 'via'    un curso puede tener varios ModulosLibro curso -->ModulosLibro
 			model: "modulolibro", //en minusculas
-			required: true
+			// required: true
 		},
 		intentosEvaluacion: {
 			//Un submodulo tiene varios intentos de evaluacion     Submodulo-->IntentosEvaluacion
 			collection: "IntentoEvaluacion",
-			via: "submodulo"
-		}
-	}
+			via: "submodulo",
+		},
+	},
 };

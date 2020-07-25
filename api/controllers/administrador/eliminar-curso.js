@@ -7,19 +7,19 @@ module.exports = {
 	inputs: {
 		cursoId: {
 			type: "string",
-			required: true
-		}
+			required: true,
+		},
 	},
 
 	exits: {
 		redirect: {
 			description: "Redirecciona a la página de home",
-			responseType: "redirect" // Los diferentes tipos de response buscar en la siguiente página https://sailsjs.com/documentation/reference/response-res
+			responseType: "redirect", // Los diferentes tipos de response buscar en la siguiente página https://sailsjs.com/documentation/reference/response-res
 			//ejemplos: responseType:'ok'  responseType:'view'
-		}
+		},
 	},
 
-	fn: async function(inputs) {
+	fn: async function (inputs) {
 		var req = this.req;
 		var res = this.res;
 		var usuario = null;
@@ -37,7 +37,7 @@ module.exports = {
 			return res.forbidden();
 		}
 
-		//si se pasa exits como parámetro deve ser usada
+		//si se pasa exits como parámetro debe ser usada
 
 		try {
 			await ModuloLibro.destroy({ curso: inputs.cursoId });
@@ -50,5 +50,5 @@ module.exports = {
 		// return exits.redirect('/administrar-home');
 
 		return "documento eliminado correctamente";
-	}
+	},
 };

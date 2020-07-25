@@ -7,18 +7,18 @@ module.exports = {
 	inputs: {
 		correoRecuperacion: {
 			type: "string",
-			required: true
-		}
+			required: true,
+		},
 	},
 
 	exits: {
 		success: {
 			statusCode: 200,
-			message: "logueado correctamente"
-		}
+			message: "logueado correctamente",
+		},
 	},
 
-	fn: async function(inputs, exits) {
+	fn: async function (inputs, exits) {
 		var res = this.res;
 		var usuarioRecuperacion = null;
 		var passwordTemporalPlano = null;
@@ -33,8 +33,8 @@ module.exports = {
 				auth: {
 					// previo a general el password para especific- app es necesario configurar la autenticacion en dos pasos de gmail
 					user: "pedro.cuasqui@gmail.com", // usuario
-					pass: "mtggfotrvzxcfmfd" // password para una app especifica, esta configuracion se realiza en la cuenta de google
-				}
+					pass: "mtggfotrvzxcfmfd", // password para una app especifica, esta configuracion se realiza en la cuenta de google
+				},
 			});
 
 			// send mail with defined transport object
@@ -42,7 +42,7 @@ module.exports = {
 				from: "pedro.cuasqui@gmail.com", // sender address
 				to: inputs.correoRecuperacion.toLowerCase(), // list of receivers
 				subject: '"alfaweb" - Restauración de contraseña" 🔐', // Subject line
-				html: `<div style="background-color:#27293d; color:#c0c1c2;"><h1>Hola, ${usuarioRecuperacion.nombre},</h1><h6>Hemos recibido una solicitud para reestablecer tu cuenta <b>alfaweb</b>, si no fuiste tú ignora este mensaje, de lo contrario ingresa con la siguiente contraseña temporal: ${generatePassword}</h6> ` // html body
+				html: `<div style="background-color:#27293d; color:#c0c1c2; font-size:2em;"><h1>Hola, ${usuarioRecuperacion.nombre},</h1><h3>Hemos recibido una solicitud para reestablecer tu cuenta <b>alfaweb</b>, si no fuiste tú ignora este mensaje, de lo contrario ingresa con la siguiente contraseña temporal: ${generatePassword}</h3> `, // html body
 			});
 
 			// Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
@@ -65,12 +65,12 @@ module.exports = {
 		// );
 		try {
 			usuarioRecuperacion = await Estudiante.findOne({
-				email: inputs.correoRecuperacion
+				email: inputs.correoRecuperacion,
 			});
 			usuarioEs = "Estudiante";
 			if (!usuarioRecuperacion) {
 				usuarioRecuperacion = await Profesor.findOne({
-					email: inputs.correoRecuperacion
+					email: inputs.correoRecuperacion,
 				});
 				usuarioEs = "Profesor";
 			}
@@ -80,11 +80,11 @@ module.exports = {
 			} else {
 				if (usuarioEs == "Estudiante") {
 					await Estudiante.update({ id: usuarioRecuperacion.id }).set({
-						codigoRecuperacion: passwordTemporalPlano
+						codigoRecuperacion: passwordTemporalPlano,
 					});
 				} else if (usuarioEs == "Profesor") {
 					await Profesor.update({ id: usuarioRecuperacion.id }).set({
-						codigoRecuperacion: passwordTemporalPlano
+						codigoRecuperacion: passwordTemporalPlano,
 					});
 				} else {
 					return res.status(500).send();
@@ -98,5 +98,5 @@ module.exports = {
 		// pendiente buscar el correo en la base de datos
 		// despues enviar el correo
 		return exits.success();
-	}
+	},
 };

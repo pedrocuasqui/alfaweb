@@ -3,14 +3,14 @@
 parasails.registerComponent("modulo-ev-individual", {
 	props: {
 		submodulo: {
-			type: Object
+			type: Object,
 		},
 		curso: {
-			type: Object
+			type: Object,
 		},
 		usuario: {
-			type: Object
-		}
+			type: Object,
+		},
 	},
 	data() {
 		return {
@@ -40,7 +40,7 @@ parasails.registerComponent("modulo-ev-individual", {
 				"#F3DF18",
 				"#C71585",
 				"#FF4500",
-				"#6A5ACD"
+				"#6A5ACD",
 			],
 
 			totalTime: null,
@@ -74,14 +74,14 @@ parasails.registerComponent("modulo-ev-individual", {
 
 			respuestaAnterior: [],
 			respuestaCuestionarioPreguntaPrueba: "",
-			colorPregunta: null
+			colorPregunta: null,
 		};
 	},
 	beforeMount() {
 		this.tipoEvaluacion = this.submodulo.evaluacion.tipo;
 		this.tiempoMaximoPorPregunta = this.submodulo.evaluacion.tiempoMaximoPorPregunta;
 		this.preguntasCuestionario = [...this.submodulo.evaluacion.preguntas];
-		this.preguntasCuestionario.forEach(pregunta => {
+		this.preguntasCuestionario.forEach((pregunta) => {
 			//agrego todas las respuestas de la evaluacion al arrreglo para despues reemplazar cada pregunta por su pregunta c , este se guardará en la collection IntentoEvaluacion con respuestas
 			let respuestaIntento = pregunta;
 			respuestaIntento.errores = null;
@@ -96,7 +96,7 @@ parasails.registerComponent("modulo-ev-individual", {
 
 		this.numeroSubmodulosCurso = this.usuario.numeroSubmodulosCurso; //numero total de submodulos por curso
 		this.submodulosAprobadosPorCurso = [
-			...this.usuario.submodulosAprobadosPorCurso
+			...this.usuario.submodulosAprobadosPorCurso,
 		];
 
 		//se ordena aleatoriamente las respuestas de emparejamiento
@@ -130,7 +130,7 @@ parasails.registerComponent("modulo-ev-individual", {
 
 		// verificamos si la evaluacion ya ha sido aprobada con anterioridad, se almacena el valor 1 en la variable submoduloAprobado en caso de ser positivo
 
-		this.submodulosAprobadosPorCurso.forEach(idSubmodulo => {
+		this.submodulosAprobadosPorCurso.forEach((idSubmodulo) => {
 			if (this.submodulo.id == idSubmodulo) {
 				this.submoduloAprobado = true;
 			}
@@ -138,7 +138,7 @@ parasails.registerComponent("modulo-ev-individual", {
 		// empieza la evaluaci'on despues de que se cierra el modal de inicio
 
 		// eslint-disable-next-line no-unused-vars
-		$("#modalInstrucciones").on("hidden.bs.modal", e => {
+		$("#modalInstrucciones").on("hidden.bs.modal", (e) => {
 			this.empezarEvaluacion();
 		});
 	},
@@ -212,8 +212,8 @@ parasails.registerComponent("modulo-ev-individual", {
       </div>
       <div class="modal-body">
 			
-				<p v-if="this.apruebaEvaluacion" class=" mintrucciones">Evaluación aprobada  <i class="fas fa-smile"></i></p>
-				<p v-else class=" mintrucciones">Evaluación reprobada <i class="fas fa-sad-tear"></i></p>
+				<p v-if="this.apruebaEvaluacion" class="evFinPtos mintrucciones">Evaluación aprobada  <i class="fas fa-smile"></i></p>
+				<p v-else class="evFinPtos mintrucciones">Evaluación reprobada <i class="fas fa-sad-tear"></i></p>
         <p class="evFinPtos mintrucciones">Aciertos: {{aciertos.length}} / {{preguntasCuestionarioRespuestas.length}} <i v-for="stars in aciertos.length" class="fas fa-star color"></i><i v-for="star in preguntasCuestionarioRespuestas.length-aciertos.length" class="fas fa-star"></i></p>
         <p class="evFinPtos mintrucciones">Puntos de la evaluación: {{puntosOtenidosAnimados}} <img class="puntos_final" src="/images/otros/iconos_evaluacion/lingote-de-oro.svg" > </p>  <!--Puntos Obtenidos:{{puntosObtenidos}}-->
         <p class="evFinPtos mintrucciones">Tus puntos acumulados son : {{puntosAnimados}} <img class="puntos_final" src="/images/otros/iconos_evaluacion/gold-ingot.svg"></p> <!--puntos-->
@@ -388,7 +388,7 @@ parasails.registerComponent("modulo-ev-individual", {
 					//si la opcion tiene un valor dentro
 					opciones.push({
 						texto: preguntaActual.opciones[opcion].trim(),
-						id: contador
+						id: contador,
 					});
 				}
 			}
@@ -445,7 +445,7 @@ parasails.registerComponent("modulo-ev-individual", {
 			} else {
 				//se verifica si la pregunta ya esta o no registrada
 				var preguntaRegistrada = false;
-				this.aciertos.forEach(indiceDePreguntaAcertada => {
+				this.aciertos.forEach((indiceDePreguntaAcertada) => {
 					if (indiceDePreguntaAcertada == this.indicePreguntaCuestionario) {
 						preguntaRegistrada = true;
 					}
@@ -495,7 +495,7 @@ parasails.registerComponent("modulo-ev-individual", {
 				$("#Preg" + this.enunciadoSeleccionado).css({
 					// "background-color": this.coloresPreguntasEmparejamiento[indexPreg],
 					"background-color": this.colorPregunta,
-					"border-radius": "10px"
+					"border-radius": "10px",
 				});
 
 				//   reseteo valores para la siguiente pregunta
@@ -513,7 +513,7 @@ parasails.registerComponent("modulo-ev-individual", {
 					).css({
 						// "background-color": this.coloresPreguntasEmparejamiento[this.enunciadoSeleccionado],
 						"background-color": this.colorPregunta,
-						"border-radius": "10px"
+						"border-radius": "10px",
 					});
 				}
 			}
@@ -528,7 +528,7 @@ parasails.registerComponent("modulo-ev-individual", {
 			if (this.respuestaAnterior.length) {
 				//si existe una respuesta anterior se la despinta
 				$("#Resp" + this.respuestaAnterior[0]).css({
-					"background-color": "#27293d"
+					"background-color": "#27293d",
 				});
 				this.respuestaAnterior.pop();
 			}
@@ -551,7 +551,7 @@ parasails.registerComponent("modulo-ev-individual", {
 								this.preguntasCuestionarioRespuestas[this.enunciadoSeleccionado]
 									.indiceRespuestaEstudiante
 						).css({
-							"background-color": "#27293d"
+							"background-color": "#27293d",
 						});
 					}
 				}
@@ -573,7 +573,7 @@ parasails.registerComponent("modulo-ev-individual", {
 						) {
 							// Se despinta la pregunta que estaba asociada a la respuesta seleccionada
 							$("#Preg" + p).css({
-								"background-color": "#27293d"
+								"background-color": "#27293d",
 							});
 
 							//Se establece en null la respuestaEstudiante de la pregunta de indice p
@@ -589,7 +589,7 @@ parasails.registerComponent("modulo-ev-individual", {
 				$("#Resp" + indexResp).css({
 					// "background-color": this.coloresPreguntasEmparejamiento[this.enunciadoSeleccionado],
 					"background-color": this.colorPregunta,
-					"border-radius": "10px"
+					"border-radius": "10px",
 				});
 
 				this.tiempoRespuestaFin = this.totalTime;
@@ -634,7 +634,7 @@ parasails.registerComponent("modulo-ev-individual", {
 						icon: "success",
 						title: "Bien hecho, terminaste antes de tiempo",
 						showConfirmButton: true,
-						timer: 2000
+						timer: 2000,
 					});
 					this.calcularPuntuacion(); //aun si es visitante se muestra el puntaje obtenido //tambien se invoca a guardar dentro de esta funcion
 				}
@@ -645,7 +645,7 @@ parasails.registerComponent("modulo-ev-individual", {
 			let finalizar = false;
 			if (this.tipoEvaluacion == "Emparejamiento") {
 				let contadorRespuestaEstudiante = 0;
-				this.preguntasCuestionarioRespuestas.forEach(pregunta => {
+				this.preguntasCuestionarioRespuestas.forEach((pregunta) => {
 					if (pregunta.respuestaEstudiante) {
 						contadorRespuestaEstudiante += 1;
 					}
@@ -669,7 +669,7 @@ parasails.registerComponent("modulo-ev-individual", {
 		randomPreguntasEmparejamiento() {
 			//
 			this.arregloRandom = [];
-			this.preguntasCuestionario.forEach(pregunta => {
+			this.preguntasCuestionario.forEach((pregunta) => {
 				let posicionAleatorio = Math.floor(Math.random() * 10); //numero aleatorio entre 0 y 10(cualquier valor entero)
 				let modulo = posicionAleatorio % 2;
 				//si el numero aleatorio es par, entonces añadimos la pregunta al inicio de la lista
@@ -688,7 +688,7 @@ parasails.registerComponent("modulo-ev-individual", {
 					icon: "info",
 					title: "Lástima!! ",
 					text: "Se terminó el tiempo",
-					showConfirmButton: true
+					showConfirmButton: true,
 				});
 				if (this.tipoEvaluacion == "Cuestionario") {
 					this.finalizarCuestionario();
@@ -825,7 +825,7 @@ parasails.registerComponent("modulo-ev-individual", {
 			// DEBE IR AQUI PORQUE EN ESTE PUNTO YA SE SABE CUANTOS PUNTOS OBTENIDOS HAY
 			TweenLite.to(this.$data, 3, {
 				puntosOtenidosInterpolados: this.puntosObtenidos,
-				puntosInterpolados: this.puntos
+				puntosInterpolados: this.puntos,
 			}); //puntosObtenidosInterpolados recibe el maximo valor  que puede tener
 		},
 		reiniciarValores() {
@@ -844,7 +844,7 @@ parasails.registerComponent("modulo-ev-individual", {
 			//nivel y medallas se encuentran actualizadas
 			this.apruebaEvaluacion = 0;
 			this.bucleCuentaRegresiva = null;
-			this.preguntasCuestionario.forEach(pregunta => {
+			this.preguntasCuestionario.forEach((pregunta) => {
 				//agrego todas las preguntas al arrreglo para despues reemplazar cada pregunta por su pregunta , este se guardará en la collection IntentoEvaluacioncon respuestas
 				let respuestaIntento = pregunta;
 				respuestaIntento.errores = null;
@@ -889,7 +889,7 @@ parasails.registerComponent("modulo-ev-individual", {
 				tipo: this.tipoEvaluacion,
 				aciertos: this.aciertos,
 				preguntas: this.preguntasCuestionarioRespuestas,
-				puntosObtenidos: this.puntosObtenidos
+				puntosObtenidos: this.puntosObtenidos,
 			};
 
 			var formData = new FormData();
@@ -907,18 +907,18 @@ parasails.registerComponent("modulo-ev-individual", {
 			axios({
 				method: "post",
 				url: "/crear-intento-evaluacion",
-				data: formData
+				data: formData,
 			})
-				.then(response => {
+				.then((response) => {
 					this.usuario.ultimoIntento = response.data.intentoEvaluacionCreado;
 				})
-				.catch(err => {
+				.catch((err) => {
 					swal({
 						icon: "error",
 						title: "Error: no se puede guardar el avance en este momento",
 						text: `${err}`,
 						showConfirmButton: true,
-						timer: 2000
+						timer: 2000,
 					});
 				});
 		},
@@ -949,14 +949,14 @@ parasails.registerComponent("modulo-ev-individual", {
 									? "No existen pistas"
 									: this.preguntaSeleccionadaJuegoEmparejamiento.pista
 							}`,
-							showConfirmButton: true
+							showConfirmButton: true,
 						});
 					} else {
 						swal({
 							icon: "info",
 							title: "Debe seleccionar un enunciado",
 							showConfirmButton: true,
-							timer: 3000
+							timer: 3000,
 						});
 					}
 				} else {
@@ -975,7 +975,7 @@ parasails.registerComponent("modulo-ev-individual", {
 										this.indicePreguntaCuestionario
 								  ].pista
 						}`,
-						showConfirmButton: true
+						showConfirmButton: true,
 					});
 				}
 			}
@@ -996,7 +996,7 @@ parasails.registerComponent("modulo-ev-individual", {
 		},
 		cancelarEvaluacion() {
 			clearTimeout(this.bucleCuentaRegresiva);
-		}
+		},
 	},
 	computed: {
 		totalTimeProgress() {
@@ -1020,13 +1020,13 @@ parasails.registerComponent("modulo-ev-individual", {
 				this.preguntasCuestionario.length - 1;
 			return es;
 		},
-		puntosOtenidosAnimados: function() {
+		puntosOtenidosAnimados: function () {
 			return this.puntosOtenidosInterpolados.toFixed(0);
 		},
-		puntosAnimados: function() {
+		puntosAnimados: function () {
 			return this.puntosInterpolados.toFixed(0);
-		}
-	}
+		},
+	},
 });
 
 /*

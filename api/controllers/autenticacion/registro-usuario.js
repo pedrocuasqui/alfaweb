@@ -10,28 +10,28 @@ module.exports = {
 	inputs: {
 		nombre: {
 			type: "string",
-			required: true
+			required: true,
 		},
 		alias: {
 			type: "string",
-			required: true
+			required: true,
 		},
 		email: {
-			type: "string"
+			type: "string",
 		},
 		password: {
 			type: "string",
-			required: true
+			required: true,
 		},
 		rol: {
 			type: "string",
-			required: true
-		}
+			required: true,
+		},
 	},
 
 	exits: {
 		success: {
-			description: "exito"
+			description: "exito",
 		},
 		// redirect: {
 		//   description: 'Redirecciona a otra página despues de registrar al usuario',
@@ -40,11 +40,11 @@ module.exports = {
 		// },
 		aliasoEmailYaEnUso: {
 			statusCode: 409,
-			description: "alias  o email ya en uso."
-		}
+			description: "alias  o email ya en uso.",
+		},
 	},
 
-	fn: async function(inputs, exits) {
+	fn: async function (inputs, exits) {
 		var res = this.res;
 		var passwordEncriptada = await sails.helpers.hashPassword(inputs.password);
 		// All done.
@@ -84,8 +84,8 @@ module.exports = {
 				auth: {
 					// previo a general el password para especific- app es necesario configurar la autenticacion en dos pasos de gmail
 					user: sails.config.custom.correoCuentaSmtp, // usuario
-					pass: "mtggfotrvzxcfmfd" // password para una app especifica, esta configuracion se realiza en la cuenta de google
-				}
+					pass: "mtggfotrvzxcfmfd", // password para una app especifica, esta configuracion se realiza en la cuenta de google
+				},
 			});
 
 			// send mail with defined transport object
@@ -97,7 +97,7 @@ module.exports = {
 					subject: 'Confirma tu cuenta "alfaweb" ✔', // Subject line
 					text:
 						'Has creado una cuenta en "alfaweb", abre este correo para confirmar', // plain text body
-					html: `<div style="background-color:#27293d; color:#c0c1c2;padding:10px;"><h1>Bienvenido ${inputs.nombre},</h1><h2>Confirma tu cuenta para acceder a la plataforma</h2> <p>Da click en CONFIRMAR, se abrirá una ventana en tu navegador y podrás acceder a tu cuenta</p> </div> <a style="font-size:2em; background-color:white" href="${sails.config.custom.baseUrl}/confirmar-usuario/?usuarioId=${usuarioCreado.id}"> CONFIRMAR</a> ` // html body
+					html: `<div style="background-color:#27293d; color:#c0c1c2;padding:10px;"><h1>Bienvenid@ ${inputs.nombre},</h1><h2>Confirma tu cuenta para acceder a la plataforma</h2> <p>Da click en CONFIRMAR, se abrirá una ventana en tu navegador y podrás acceder a tu cuenta</p> </div> <a style="font-size:2em; background-color:white" href="${sails.config.custom.baseUrl}/confirmar-usuario/?usuarioId=${usuarioCreado.id}"> CONFIRMAR</a> `, // html body
 				});
 			} else {
 				// si el usuario es administrador, requiere permiso del superAdmin del grupo
@@ -105,12 +105,12 @@ module.exports = {
 				//BUSCA SUPERsuperAdministradores EN LA BASE
 
 				superAdministradores = await Profesor.find({
-					superAdmin: true
+					superAdmin: true,
 				}).sort("createdAt DESC");
 
 				//lista convierte a string
 				var usuariosAdmin = "";
-				superAdministradores.forEach(sadmin => {
+				superAdministradores.forEach((sadmin) => {
 					usuariosAdmin = usuariosAdmin + sadmin.email + " , ";
 				});
 				//ENVIAR CORREO A TODOS LOS SUPERADMIN
@@ -125,14 +125,14 @@ module.exports = {
 						}</b>, con correo: ${inputs.email.toLowerCase()}, ha solicitado permiso para acceder como <strong>administrador</strong> a la plataforma "alfaweb" </p>
 						<br>
 						<p>Como <strong>superAdmin</strong> puedes habilitar o deshabilitar usuarios <strong>administrador</strong> <br> Ingresa a la plataforma "alfaweb" para conceder los permisos.</p>
-						</div> ` // html body
+						</div> `, // html body
 				});
 
 				info = await transporter.sendMail({
 					from: sails.config.custom.correoCuentaSmtp, // sender address
 					to: inputs.email.toLowerCase(), // list of receivers
 					subject: 'Cuenta "alfaweb"  creada ✔', // Subject line
-					html: `<div style="background-color:#27293d; color:#c0c1c2 !important; padding:10px;"><h1>Bienvenido ${inputs.nombre},</h1><h2>Has creado una cuenta como <strong>administrador</strong>.</h2><br> <p>Por seguridad, un usuario con rol <b>super Admin</b> debe concederte el permiso para ingresar con esta cuenta .</p> <p>Se ha enviado un correo pidiendo se active tu cuenta a:  <b> ${usuariosAdmin} </b>.</p></div> ` // html body
+					html: `<div style="background-color:#27293d; color:#c0c1c2 !important; padding:10px;"><h1>Bienvenido ${inputs.nombre},</h1><h2>Has creado una cuenta como <strong>administrador</strong>.</h2><br> <p>Por seguridad, un usuario con rol <b>super Admin</b> debe concederte el permiso para ingresar con esta cuenta .</p> <p>Se ha enviado un correo pidiendo se active tu cuenta a:  <b> ${usuariosAdmin} </b>.</p></div> `, // html body
 				});
 			}
 
@@ -149,7 +149,7 @@ module.exports = {
 				alias: inputs.alias,
 				email: inputs.email.toLowerCase(),
 				password: passwordEncriptada,
-				confirmado: false
+				confirmado: false,
 				// ultimoAcceso:Date.now(), //solo para crear
 				// avance:{} //inicia vacio
 			})
@@ -160,7 +160,7 @@ module.exports = {
 						"Ya existe el usuario con el alias o email provistos";
 					return res.status(409).send({ error: errores });
 				})
-				.intercept(err => {
+				.intercept((err) => {
 					sails.log("ERROR GENERAL\n" + err);
 				});
 			if (inputs.email && usuarioCreado) {
@@ -176,7 +176,7 @@ module.exports = {
 				password: passwordEncriptada,
 				administrador: true,
 				tutor: false,
-				confirmado: false
+				confirmado: false,
 			})
 				.fetch()
 
@@ -187,7 +187,7 @@ module.exports = {
 					//  return exits.aliasoEmailYaEnUso()
 					return "aliasoEmailYaEnUso";
 				})
-				.intercept(err => {
+				.intercept((err) => {
 					return res.status(500).send({ err });
 				});
 			if (inputs.email && usuarioCreado) {
@@ -198,5 +198,5 @@ module.exports = {
 		}
 
 		return res.status(200).send({ usuarioCreado }); // es necesario retornar algo para que axios sepa que realizar
-	}
+	},
 };
