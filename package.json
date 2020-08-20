@@ -10,7 +10,7 @@
 		"@sailshq/socket.io-redis": "^5.2.0",
 		"@tinymce/tinymce-vue": "^2.0.0",
 		"async": "2.0.1",
-		"bcrypt": "^3.0.6",
+		"bcrypt": "^5.0.0",
 		"connect-mongo": "1.1.0",
 		"formidable": "^1.2.1",
 		"grunt": "^1.0.4",
